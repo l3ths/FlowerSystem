@@ -25,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         tvForgotPassword = findViewById(R.id.tvForgotPasswordRedirect);
         tvRegister = findViewById(R.id.tvRegisterRedirect);
+        btnLogin = findViewById(R.id.btnLogin);
 
     }
 }
