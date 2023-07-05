@@ -11,6 +11,7 @@
         android:layout_height="80dp"
         android:weightSum="5"
         android:paddingBottom="10dp"
+        android:background="#4DFFAB40"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -72,13 +73,14 @@
         android:layout_height="wrap_content"
         android:background="#66FF9E00"
         android:paddingBottom="20dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView">
 
         <ImageView
             android:id="@+id/imageView6"
-            android:layout_width="270dp"
-            android:layout_height="270dp"
+            android:layout_width="240dp"
+            android:layout_height="250dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -97,8 +99,8 @@
 
         <ImageView
             android:id="@+id/imageView7"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -107,8 +109,8 @@
 
         <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
             android:layout_marginTop="5dp"
             app:layout_constraintEnd_toEndOf="@+id/imageView7"
             app:layout_constraintStart_toStartOf="@+id/imageView7"
@@ -153,22 +155,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:background="#33A3A3A3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:padding="5dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="@+id/textView17"
-            app:layout_constraintStart_toStartOf="@+id/textView17"
-            app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
         <ImageView
             android:id="@+id/imageView9"
-            android:layout_width="130dp"
+            android:layout_width="120dp"
             android:layout_height="130dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11"
@@ -176,7 +169,7 @@
 
         <ImageView
             android:id="@+id/imageView10"
-            android:layout_width="130dp"
+            android:layout_width="120dp"
             android:layout_height="130dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11"
@@ -187,7 +180,8 @@
             android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:text="HOT"
+            android:text="Phổ biến nhất"
+            android:background="#A3A3A3"
             android:gravity="center"
 
             app:layout_constraintEnd_toEndOf="parent"
@@ -196,7 +190,7 @@
 
         <ImageView
             android:id="@+id/imageView13"
-            android:layout_width="130dp"
+            android:layout_width="120dp"
             android:layout_height="130dp"
             app:layout_constraintEnd_toStartOf="@+id/imageView10"
             app:layout_constraintStart_toEndOf="@+id/imageView9"
@@ -204,18 +198,8 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/textView13"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:padding="5dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="@+id/textView16"
-            app:layout_constraintStart_toStartOf="@+id/textView16"
-            app:layout_constraintTop_toBottomOf="@+id/textView16" />
-
-        <TextView
             android:id="@+id/textView16"
-            android:layout_width="130dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="@+id/imageView9"
@@ -224,7 +208,7 @@
 
         <TextView
             android:id="@+id/textView17"
-            android:layout_width="130dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="@+id/imageView13"
@@ -234,7 +218,7 @@
 
         <TextView
             android:id="@+id/textView18"
-            android:layout_width="130dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="@+id/imageView10"
@@ -242,24 +226,13 @@
             app:layout_constraintStart_toStartOf="@+id/imageView10"
             app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:padding="5dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="@+id/textView18"
-            app:layout_constraintHorizontal_bias="0.458"
-            app:layout_constraintStart_toStartOf="@+id/textView18"
-            app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        
+        app:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
