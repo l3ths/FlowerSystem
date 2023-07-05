@@ -73,7 +73,7 @@
         android:background="#66FF9E00"
         android:paddingBottom="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/searchView">
 
         <ImageView
             android:id="@+id/imageView6"
@@ -99,8 +99,8 @@
             android:id="@+id/imageView7"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView12"
             tools:srcCompat="@tools:sample/avatars" />
@@ -130,8 +130,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="TextView"
             android:layout_marginBottom="20dp"
+            android:text="TextView"
             app:layout_constraintEnd_toEndOf="@+id/imageView8"
             app:layout_constraintStart_toStartOf="@+id/imageView8"
             app:layout_constraintTop_toBottomOf="@+id/imageView8" />
@@ -140,12 +140,13 @@
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Đang Giảm giá"
             android:background="#FF9E00"
             android:gravity="center"
+            android:text="Đang Giảm giá"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -253,5 +254,14 @@
             app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
