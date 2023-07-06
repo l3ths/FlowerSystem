@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CartActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+        <ImageView
+            android:id="@+id/ivDetailFlowerImage"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tvDetailFlowerDetails"
+            android:layout_width="171dp"
+            android:layout_height="73dp"
+            android:layout_marginTop="5dp"
+            android:text="Sản phẩm bao gồm:\n - 2kg Vải tươi. \n - Hoa Baby\n - Lá lạc"
+            android:textSize="13dp"
+            app:layout_constraintStart_toEndOf="@+id/ivDetailFlowerImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvDetailFlowerPrice" />
+
+        <TextView
+            android:id="@+id/tvDetailFlowerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Bó hoa vải thiều"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/ivDetailFlowerImage"
+            app:layout_constraintTop_toTopOf="@+id/ivDetailFlowerImage" />
+
+        <TextView
+            android:id="@+id/tvDetailFlowerPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="550000"
+            android:textColor="#FF0000"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/ivDetailFlowerImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvDetailFlowerName" />
+
+        <ImageView
+            android:id="@+id/ivAdd"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/plus_ic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvQuantity"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivAdd"
+            app:layout_constraintEnd_toStartOf="@+id/ivAdd"
+            app:layout_constraintTop_toTopOf="@+id/ivAdd" />
+
+        <ImageView
+            android:id="@+id/ivMinus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@drawable/minus_ic"
+            app:layout_constraintBottom_toBottomOf="@+id/tvQuantity"
+            app:layout_constraintEnd_toStartOf="@+id/tvQuantity"
+            app:layout_constraintTop_toTopOf="@+id/tvQuantity" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Đ"
+            android:textColor="#FF0000"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDetailFlowerPrice"
+            app:layout_constraintStart_toEndOf="@+id/tvDetailFlowerPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvDetailFlowerPrice" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#4DFFAB40"
+        android:paddingBottom="10dp"
+        android:weightSum="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/ivLove"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@drawable/ic_love" />
+
+        <ImageView
+            android:id="@+id/ivOrder"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:src="@drawable/ic_order" />
+
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:padding="13dp"
+            android:src="@drawable/ic_home_clicked" />
+
+        <ImageView
+            android:id="@+id/ivNotification"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@drawable/ic_noti" />
+
+        <ImageView
+            android:id="@+id/ivPersonal"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@drawable/ic_personal"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Giỏ hàng"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19">
+
+        <ImageView
+            android:id="@+id/ivDetailCartImage"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tvDetailCartDetails"
+            android:layout_width="171dp"
+            android:layout_height="73dp"
+            android:layout_marginTop="5dp"
+            android:text="Sản phẩm bao gồm:\n - 2kg Vải tươi. \n - Hoa Baby\n - Lá lạc"
+            android:textSize="13dp"
+            app:layout_constraintStart_toEndOf="@+id/ivDetailCartImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvDetailCartPrice" />
+
+        <TextView
+            android:id="@+id/tvDetailCartName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Bó hoa vải thiều"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/ivDetailCartImage"
+            app:layout_constraintTop_toTopOf="@+id/ivDetailCartImage" />
+
+        <TextView
+            android:id="@+id/tvDetailCartPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="550000"
+            android:textColor="#FF0000"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/ivDetailCartImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvDetailCartName" />
+
+        <ImageView
+            android:id="@+id/ivAdd1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/plus_ic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvQuantity1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivAdd1"
+            app:layout_constraintEnd_toStartOf="@+id/ivAdd1"
+            app:layout_constraintTop_toTopOf="@+id/ivAdd1" />
+
+        <ImageView
+            android:id="@+id/ivMinus1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@drawable/minus_ic"
+            app:layout_constraintBottom_toBottomOf="@+id/tvQuantity1"
+            app:layout_constraintEnd_toStartOf="@+id/tvQuantity1"
+            app:layout_constraintTop_toTopOf="@+id/tvQuantity1" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Đ"
+            android:textColor="#FF0000"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDetailCartPrice"
+            app:layout_constraintStart_toEndOf="@+id/tvDetailCartPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvDetailCartPrice" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tổng : "
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView21"
+        app:layout_constraintEnd_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toTopOf="@+id/textView21" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.100.000"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:textColor="#FF0000"
+        app:layout_constraintBottom_toBottomOf="@+id/textView23"
+        app:layout_constraintEnd_toStartOf="@+id/textView23"
+        app:layout_constraintTop_toTopOf="@+id/textView23"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Đ"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:textStyle="italic"
+        android:textColor="#FF0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" />
+
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FF9E00"
+        android:text="ĐẶT HÀNG"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
