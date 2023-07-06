@@ -50,7 +50,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="16dp"
-            android:src="@drawable/ic_order" />
+            android:src="@drawable/ic_order_clicked" />
 
         <ImageView
             android:id="@+id/ivHome"
@@ -58,7 +58,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="13dp"
-            android:src="@drawable/ic_home_clicked" />
+            android:src="@drawable/ic_home_page" />
 
         <ImageView
             android:id="@+id/ivNotification"
