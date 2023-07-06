@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/ivOrder"
+            android:id="@+id/ivOrders"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="1"
