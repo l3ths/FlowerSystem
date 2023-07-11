@@ -25,7 +25,7 @@ public class FlowerDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flower_detail);
         ivBack = findViewById(R.id.ivBack);
-        ivHelp = findViewById(R.id.ivHelp);
+//        ivHelp = findViewById(R.id.ivHelp);
         ivImage = findViewById(R.id.ivDetailFlowerImage);
         tvName = findViewById(R.id.tvDetailFlowerName);
         tvPrice = findViewById(R.id.tvDetailFlowerPrice);

@@ -10,7 +10,7 @@ public class PrepaidOrderDTO implements Serializable {
 
     private OrderDTO orderDTO;
     private String paymentStatus;
-    private LocalDateTime completionDate;
+    private String completionDate;
     private String paymentCode;
 
     public PrepaidOrderDTO() {
@@ -40,11 +40,11 @@ public class PrepaidOrderDTO implements Serializable {
         this.paymentStatus = paymentStatus;
     }
 
-    public LocalDateTime getCompletionDate() {
+    public String getCompletionDate() {
         return completionDate;
     }
 
-    public void setCompletionDate(LocalDateTime completionDate) {
+    public void setCompletionDate(String completionDate) {
         this.completionDate = completionDate;
     }
 

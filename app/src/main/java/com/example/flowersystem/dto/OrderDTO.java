@@ -7,8 +7,8 @@ import java.time.LocalDateTime;
 public class OrderDTO implements Serializable {
 
     private Long id;
-    private LocalDateTime orderDate;
-    private LocalDateTime shippingDate;
+    private String orderDate;
+    private String shippingDate;
     private String orderStatus;
     private double total;
     private String paymentMethod;
@@ -25,19 +25,19 @@ public class OrderDTO implements Serializable {
         this.id = id;
     }
 
-    public LocalDateTime getOrderDate() {
+    public String getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(LocalDateTime orderDate) {
+    public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
 
-    public LocalDateTime getShippingDate() {
+    public String getShippingDate() {
         return shippingDate;
     }
 
-    public void setShippingDate(LocalDateTime shippingDate) {
+    public void setShippingDate(String shippingDate) {
         this.shippingDate = shippingDate;
     }
 

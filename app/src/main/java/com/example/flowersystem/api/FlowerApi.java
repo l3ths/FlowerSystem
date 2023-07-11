@@ -1,4 +1,4 @@
 package com.example.flowersystem.api;
 
-public class FlowerApi {
+public interface FlowerApi {
 }
