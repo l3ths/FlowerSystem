@@ -20,7 +20,6 @@ import com.example.flowersystem.api.LoginApi;
 import com.example.flowersystem.dto.JwtTokenDTO;
 import com.example.flowersystem.dto.LoginInforDTO;
 
-import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -28,7 +27,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
-    private ImageView ivBack;
     private EditText etPhone;
     private EditText etPassword;
     private TextView tvForgotPassword;
@@ -36,13 +34,12 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private TextView tvLoginFailed;
     private RelativeLayout relativeLayoutLoading;
-    private final String REQUIRED_FIELD = "Required";
+    private final String REQUIRED_FIELD = "Bắt buộc";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        ivBack = findViewById(R.id.ivBack);
         etPhone = findViewById(R.id.etPhone);
         etPassword = findViewById(R.id.etPassword);
         tvForgotPassword = findViewById(R.id.tvForgotPasswordRedirect);
@@ -73,6 +70,15 @@ public class LoginActivity extends AppCompatActivity {
                 if(tvLoginFailed.getVisibility() == View.VISIBLE){
                     tvLoginFailed.setVisibility(View.GONE);
                 }
+            }
+        });
+
+        tvRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
 
@@ -109,6 +115,7 @@ public class LoginActivity extends AppCompatActivity {
                             JwtTokenManager.JWT_TOKEN = jwtTokenDTO.getToken();
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(intent);
+                            finish();
                         }
                     }
 
