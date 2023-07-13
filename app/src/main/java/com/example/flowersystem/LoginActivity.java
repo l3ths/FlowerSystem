@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
                             tvLoginFailed.setVisibility(View.VISIBLE);
                         } else {
                             JwtTokenManager.JWT_TOKEN = jwtTokenDTO.getToken();
-                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, SearchActivity.class);
                             startActivity(intent);
                             finish();
                         }

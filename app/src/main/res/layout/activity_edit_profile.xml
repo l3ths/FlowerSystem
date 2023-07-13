@@ -198,7 +198,6 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="none"
             android:hint="Tài khoản liên kết"
             android:textStyle="italic" />
 
