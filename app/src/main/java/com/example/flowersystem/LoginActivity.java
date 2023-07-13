@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         etPassword.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(tvLoginFailed.getVisibility() == View.VISIBLE){
+                if (tvLoginFailed.getVisibility() == View.VISIBLE) {
                     tvLoginFailed.setVisibility(View.GONE);
                 }
             }
@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
         etPhone.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(tvLoginFailed.getVisibility() == View.VISIBLE){
+                if (tvLoginFailed.getVisibility() == View.VISIBLE) {
                     tvLoginFailed.setVisibility(View.GONE);
                 }
             }
@@ -112,7 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (jwtTokenDTO.getToken() == null || jwtTokenDTO.getToken().isEmpty()) {
                             tvLoginFailed.setVisibility(View.VISIBLE);
                         } else {
-                            JwtTokenManager.JWT_TOKEN = jwtTokenDTO.getToken();
+                            JwtTokenManager.JWT_TOKEN = "Bearer " + jwtTokenDTO.getToken();
                             Intent intent = new Intent(LoginActivity.this, SearchActivity.class);
                             startActivity(intent);
                             finish();
