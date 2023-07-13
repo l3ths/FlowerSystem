@@ -8,6 +8,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.flowersystem.api.FlowerApi;
+import com.example.flowersystem.api.RetrofitClient;
+import com.example.flowersystem.dto.Flower;
+import com.example.flowersystem.dto.FlowerDTO;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
 public class FlowerDetailActivity extends AppCompatActivity {
     ImageView ivBack;
     ImageView ivCart;
@@ -39,7 +49,32 @@ public class FlowerDetailActivity extends AppCompatActivity {
         tvBuyNow = findViewById(R.id.tvBuyNow);
 
         Intent intent = getIntent();
-//        if (intent.)
+        if (intent!=null){
+            long id = intent.getLongExtra("flowerDetailID",113);
+            Retrofit retrofit = RetrofitClient.getInstance();
+            FlowerApi flowerApi = retrofit.create(FlowerApi.class);
+            try {
+                Call<FlowerDTO> call = flowerApi.getFlower(id);
+                call.enqueue(new Callback<FlowerDTO>() {
+                    @Override
+                    public void onResponse(Call<FlowerDTO> call, Response<FlowerDTO> response) {
+                        if (response.isSuccessful()){
+                            FlowerDTO flowerDTO = response.body();
+                            tvName.setText(flowerDTO.getFlowerName());
+                            tvPrice.setText(flowerDTO.getUnitPrice()+"");
+                            tvDetails.setText(flowerDTO.getFlowerDescription());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<FlowerDTO> call, Throwable t) {
+
+                    }
+                });
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
 
     }
 }

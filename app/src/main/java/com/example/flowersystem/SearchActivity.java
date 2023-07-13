@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.flowersystem.api.FlowerApi;
@@ -51,7 +52,7 @@ public class SearchActivity extends AppCompatActivity {
                     ArrayList<Flower> flowerList = new ArrayList<>();
                     Flower flower = new Flower(list.get(0).getId(),list.get(0).getFlowerName(),list.get(0).getFlowerDescription(),list.get(0).getImage(),list.get(0).getUnitPrice());
                     flowerList.add(flower);
-                    adapter.setTasks(flowerList);
+                    adapter.setTasks(list);
                 }
 
                 @Override
@@ -63,5 +64,10 @@ public class SearchActivity extends AppCompatActivity {
         } catch (Exception e){
             e.printStackTrace();
         }
+    }
+    public void goToDetail(Long id){
+        Intent intent = new Intent(SearchActivity.this, FlowerDetailActivity.class);
+        intent.putExtra("flowerDetailID",id);
+        startActivity(intent);
     }
 }
