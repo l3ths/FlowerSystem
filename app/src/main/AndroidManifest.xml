@@ -14,9 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlowerSystem"
         tools:targetApi="31">
-<!--        <activity-->
-<!--            android:name=".TestApiToken"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".dto.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dto.ProfileActivity"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".TestApiToken" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".PaymentMethodActivity"
             android:exported="false" />
