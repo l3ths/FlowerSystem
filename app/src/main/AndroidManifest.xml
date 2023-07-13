@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlowerSystem"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ShopInformationActivity"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -28,7 +30,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="AIzaSyBrFAixXoJt3qtR0iSx-hSYb-Qrbt3SaDM" />
 
         <activity
             android:name=".dto.EditProfileActivity"
