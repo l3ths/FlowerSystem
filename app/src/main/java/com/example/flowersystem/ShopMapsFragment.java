@@ -31,8 +31,8 @@ public class ShopMapsFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng sydney = new LatLng(-34, 151);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+            LatLng sydney = new LatLng(10.841865213792287, 106.8106983915669);
+            googleMap.addMarker(new MarkerOptions().position(sydney).title("Flower Shop"));
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         }
     };
