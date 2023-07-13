@@ -1,6 +1,8 @@
 package com.example.flowersystem;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -8,7 +10,7 @@ import android.widget.TextView;
 
 public class FlowerDetailActivity extends AppCompatActivity {
     ImageView ivBack;
-    ImageView ivHelp;
+    ImageView ivCart;
     ImageView ivImage;
     TextView tvName;
     TextView tvPrice;
@@ -25,7 +27,7 @@ public class FlowerDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flower_detail);
         ivBack = findViewById(R.id.ivBack);
-//        ivHelp = findViewById(R.id.ivHelp);
+        ivCart = findViewById(R.id.ivCart);
         ivImage = findViewById(R.id.ivDetailFlowerImage);
         tvName = findViewById(R.id.tvDetailFlowerName);
         tvPrice = findViewById(R.id.tvDetailFlowerPrice);
@@ -35,6 +37,9 @@ public class FlowerDetailActivity extends AppCompatActivity {
         ivAdd = findViewById(R.id.ivAdd);
         llAddToCart = findViewById(R.id.llAddToCart);
         tvBuyNow = findViewById(R.id.tvBuyNow);
+
+        Intent intent = getIntent();
+//        if (intent.)
 
     }
 }
