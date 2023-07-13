@@ -117,14 +117,14 @@ public class RegisterActivity extends AppCompatActivity {
                             finishLoadingAnimation();
                         }
                     });
-                    if (response.code() == 409) {
+                    if (response.code() == HTTP_DUPLICATED_CODE) {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 etPhone.setError(PHONE_HAS_BEEN_USED);
                             }
                         });
-                    } else if (response.code() == 201) {
+                    } else if (response.code() == HTTP_CREATED_CODE) {
 
                         login(customerDTO);
                     }
