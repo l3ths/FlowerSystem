@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.example.flowersystem.api.FlowerApi;
 import com.example.flowersystem.api.RetrofitClient;
@@ -24,12 +26,22 @@ import retrofit2.Retrofit;
 public class SearchActivity extends AppCompatActivity {
     RecyclerView rvSearch;
     SearchFlowerAdapter adapter;
+    ImageView ivCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         rvSearch = findViewById(R.id.rvSearch);
+        ivCart = findViewById(R.id.ivCart);
+
+        ivCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SearchActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
 
         rvSearch.setLayoutManager(new LinearLayoutManager(SearchActivity.this));
         adapter = new SearchFlowerAdapter(SearchActivity.this);

@@ -20,6 +20,10 @@ public class FlowerDTO implements Serializable {
     public FlowerDTO() {
     }
 
+    public FlowerDTO(Long id) {
+        this.id = id;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

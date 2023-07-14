@@ -6,7 +6,9 @@ import com.example.flowersystem.dto.FlowerDTO;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface CartApi {
@@ -16,4 +18,6 @@ public interface CartApi {
 //    public Call<List<FlowerDTO>> getAllFlowers();
     @GET("/v1/carts/customer/{customerId}")
     public Call<List<CartDTO>> getAllCartByID(@Path("customerId") Long customerId);
+    @POST("/v1/carts/customer/{customerId}")
+    public Call<CartDTO> addToCart(@Path("customerId") Long customerId,@Body CartDTO cartDTO);
 }

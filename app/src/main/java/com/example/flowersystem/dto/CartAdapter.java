@@ -52,6 +52,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             return 0;
         return cartList.size();
     }
+    public void setTasks(List<CartDTO> list) {
+        cartList = list;
+        notifyDataSetChanged();
+    }
+
+    public List<CartDTO> getTasks() {
+        return cartList;
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvCartName;

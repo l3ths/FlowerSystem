@@ -11,6 +11,11 @@ public class CartDTO implements Serializable {
     public CartDTO() {
     }
 
+    public CartDTO(FlowerDTO fLowerDTO, int quantity) {
+        this.fLowerDTO = fLowerDTO;
+        this.quantity = quantity;
+    }
+
     public Long getId() {
         return id;
     }

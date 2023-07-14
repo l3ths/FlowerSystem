@@ -5,14 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.flowersystem.api.CartApi;
 import com.example.flowersystem.api.FlowerApi;
 import com.example.flowersystem.api.RetrofitClient;
+import com.example.flowersystem.dto.CartDTO;
 import com.example.flowersystem.dto.Flower;
 import com.example.flowersystem.dto.FlowerDTO;
 
@@ -33,6 +36,7 @@ public class FlowerDetailActivity extends AppCompatActivity {
     ImageView ivAdd;
     LinearLayout llAddToCart;
     TextView tvBuyNow;
+    TextView tvAddToCart;
     int quantity;
     int maxQuantity;
     FlowerDTO flowerDTO;
@@ -53,6 +57,41 @@ public class FlowerDetailActivity extends AppCompatActivity {
         ivAdd = findViewById(R.id.ivAdd);
         llAddToCart = findViewById(R.id.llAddToCart);
         tvBuyNow = findViewById(R.id.tvBuyNow);
+        tvAddToCart = findViewById(R.id.tvAddToCart);
+
+        llAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Retrofit retrofit = RetrofitClient.getInstance();
+                CartApi cartApi = retrofit.create(CartApi.class);
+                CartDTO cart = new CartDTO(flowerDTO, quantity);
+                try {
+                    Call<CartDTO> call = cartApi.addToCart(1L, cart);
+                    call.enqueue(new Callback() {
+                        @Override
+                        public void onResponse(Call call, Response response) {
+                            Toast.makeText(FlowerDetailActivity.this, "Đã thêm vào giỏ hàng!", Toast.LENGTH_SHORT).show();
+
+                        }
+
+                        @Override
+                        public void onFailure(Call call, Throwable t) {
+                            Toast.makeText(FlowerDetailActivity.this, "Fail!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        ivCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FlowerDetailActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
 
         quantity = Integer.parseInt(tvQuantity.getText().toString());
         ivAdd.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +99,7 @@ public class FlowerDetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (quantity < maxQuantity) {
                     quantity++;
-                    tvQuantity.setText(quantity+"");
+                    tvQuantity.setText(quantity + "");
                 } else {
                     Toast.makeText(FlowerDetailActivity.this, "Đã đạt tối đa số lượng!", Toast.LENGTH_SHORT).show();
                 }
@@ -69,9 +108,9 @@ public class FlowerDetailActivity extends AppCompatActivity {
         ivMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (quantity > 0) {
+                if (quantity > 1) {
                     quantity--;
-                    tvQuantity.setText(quantity+"");
+                    tvQuantity.setText(quantity + "");
                 }
             }
         });
