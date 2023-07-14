@@ -14,9 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.flowersystem.FlowerDetailActivity;
 import com.example.flowersystem.R;
 import com.example.flowersystem.SearchActivity;
+import com.example.flowersystem.ShopInformationActivity;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,7 +47,10 @@ public class SearchFlowerAdapter extends RecyclerView.Adapter<SearchFlowerAdapte
         FlowerDTO flower = flowerList.get(position);
         holder.tvSearchName.setText(flower.getFlowerName());
         holder.tvSearchPrice.setText(flower.getUnitPrice()+"");
-        holder.ivSearchImage.setImageResource(R.drawable.ic_cart);
+        Glide.with(context)
+                .load(flower.getImage())
+                .centerCrop()
+                .into(holder.ivSearchImage);
         holder.clSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.flowersystem.api.FlowerApi;
 import com.example.flowersystem.api.RetrofitClient;
 import com.example.flowersystem.dto.Flower;
@@ -49,8 +50,8 @@ public class FlowerDetailActivity extends AppCompatActivity {
         tvBuyNow = findViewById(R.id.tvBuyNow);
 
         Intent intent = getIntent();
-        if (intent!=null){
-            long id = intent.getLongExtra("flowerDetailID",113);
+        if (intent != null) {
+            long id = intent.getLongExtra("flowerDetailID", 113);
             Retrofit retrofit = RetrofitClient.getInstance();
             FlowerApi flowerApi = retrofit.create(FlowerApi.class);
             try {
@@ -58,12 +59,13 @@ public class FlowerDetailActivity extends AppCompatActivity {
                 call.enqueue(new Callback<FlowerDTO>() {
                     @Override
                     public void onResponse(Call<FlowerDTO> call, Response<FlowerDTO> response) {
-                        if (response.isSuccessful()){
-                            FlowerDTO flowerDTO = response.body();
-                            tvName.setText(flowerDTO.getFlowerName());
-                            tvPrice.setText(flowerDTO.getUnitPrice()+"");
-                            tvDetails.setText(flowerDTO.getFlowerDescription());
-                        }
+                        tvName.setText(response.body().getFlowerName());
+                        tvPrice.setText(response.body().getUnitPrice() + "");
+                        tvDetails.setText(response.body().getFlowerDescription());
+                        Glide.with(FlowerDetailActivity.this)
+                                .load(response.body().getImage())
+                                .centerCrop()
+                                .into(ivImage);
                     }
 
                     @Override
@@ -71,7 +73,7 @@ public class FlowerDetailActivity extends AppCompatActivity {
 
                     }
                 });
-            } catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

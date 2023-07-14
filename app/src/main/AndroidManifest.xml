@@ -15,7 +15,7 @@
         android:theme="@style/Theme.FlowerSystem"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".ShopInformationActivity"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -68,7 +68,7 @@
             android:name=".TestApiToken"
             android:exported="false" />
         <activity
-            android:name=".ShopInformationActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
