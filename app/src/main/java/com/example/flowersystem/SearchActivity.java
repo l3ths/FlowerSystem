@@ -49,9 +49,6 @@ public class SearchActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<List<FlowerDTO>> call, Response<List<FlowerDTO>> response) {
                     List<FlowerDTO> list = response.body();
-                    ArrayList<Flower> flowerList = new ArrayList<>();
-                    Flower flower = new Flower(list.get(0).getId(),list.get(0).getFlowerName(),list.get(0).getFlowerDescription(),list.get(0).getImage(),list.get(0).getUnitPrice());
-                    flowerList.add(flower);
                     adapter.setTasks(list);
                 }
 

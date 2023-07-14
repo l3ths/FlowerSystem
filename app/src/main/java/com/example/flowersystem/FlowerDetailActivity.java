@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.flowersystem.api.FlowerApi;
@@ -31,6 +33,9 @@ public class FlowerDetailActivity extends AppCompatActivity {
     ImageView ivAdd;
     LinearLayout llAddToCart;
     TextView tvBuyNow;
+    int quantity;
+    int maxQuantity;
+    FlowerDTO flowerDTO;
 
 
     @Override
@@ -49,6 +54,37 @@ public class FlowerDetailActivity extends AppCompatActivity {
         llAddToCart = findViewById(R.id.llAddToCart);
         tvBuyNow = findViewById(R.id.tvBuyNow);
 
+        quantity = Integer.parseInt(tvQuantity.getText().toString());
+        ivAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (quantity < maxQuantity) {
+                    quantity++;
+                    tvQuantity.setText(quantity+"");
+                } else {
+                    Toast.makeText(FlowerDetailActivity.this, "Đã đạt tối đa số lượng!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        ivMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (quantity > 0) {
+                    quantity--;
+                    tvQuantity.setText(quantity+"");
+                }
+            }
+        });
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getData();
+    }
+
+    public void getData() {
         Intent intent = getIntent();
         if (intent != null) {
             long id = intent.getLongExtra("flowerDetailID", 113);
@@ -59,13 +95,15 @@ public class FlowerDetailActivity extends AppCompatActivity {
                 call.enqueue(new Callback<FlowerDTO>() {
                     @Override
                     public void onResponse(Call<FlowerDTO> call, Response<FlowerDTO> response) {
-                        tvName.setText(response.body().getFlowerName());
-                        tvPrice.setText(response.body().getUnitPrice() + "");
-                        tvDetails.setText(response.body().getFlowerDescription());
+                        flowerDTO = response.body();
+                        tvName.setText(flowerDTO.getFlowerName());
+                        tvPrice.setText(flowerDTO.getUnitPrice() + "");
+                        tvDetails.setText(flowerDTO.getFlowerDescription());
                         Glide.with(FlowerDetailActivity.this)
-                                .load(response.body().getImage())
+                                .load(flowerDTO.getImage())
                                 .centerCrop()
                                 .into(ivImage);
+                        maxQuantity = flowerDTO.getStock();
                     }
 
                     @Override
@@ -77,6 +115,5 @@ public class FlowerDetailActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
     }
 }

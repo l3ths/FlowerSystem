@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/clCart"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#66FB8C00"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivCartFlowerImage">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/ivCartFlowerImage"
+        android:src="@drawable/ic_cart_clicked"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCartFlowerDetails"
+        android:layout_width="171dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="5dp"
+        android:text="Sản phẩm bao gồm:\n - 2kg Vải tươi. \n - Hoa Baby\n - Lá lạc"
+        android:textSize="13dp"
+        app:layout_constraintStart_toEndOf="@+id/ivCartFlowerImage"
+        app:layout_constraintTop_toBottomOf="@+id/tvCartFlowerPrice" />
+
+    <TextView
+        android:id="@+id/tvCartFlowerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Bó hoa vải thiều"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivCartFlowerImage"
+        app:layout_constraintTop_toTopOf="@+id/ivCartFlowerImage" />
+
+    <TextView
+        android:id="@+id/tvCartFlowerPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="550000"
+        android:textColor="#FF0000"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/ivCartFlowerImage"
+        app:layout_constraintTop_toBottomOf="@+id/tvCartFlowerName" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Đ"
+        android:textColor="#FF0000"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCartFlowerPrice"
+        app:layout_constraintStart_toEndOf="@+id/tvCartFlowerPrice"
+        app:layout_constraintTop_toTopOf="@+id/tvCartFlowerPrice" />
+    <ImageView
+        android:id="@+id/ivCartAdd"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:src="@drawable/plus_ic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCartQuantity"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="1"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCartAdd"
+        app:layout_constraintEnd_toStartOf="@+id/ivCartAdd"
+        app:layout_constraintTop_toTopOf="@+id/ivCartAdd" />
+
+    <ImageView
+        android:id="@+id/ivCartMinus"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:src="@drawable/minus_ic"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCartQuantity"
+        app:layout_constraintEnd_toStartOf="@+id/tvCartQuantity"
+        app:layout_constraintTop_toTopOf="@+id/tvCartQuantity" />
+</androidx.constraintlayout.widget.ConstraintLayout>
