@@ -11,6 +11,15 @@ public class CustomerDTO implements Serializable {
     private String address;
     private String phone;
     private String password;
+    private String role;
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     public CustomerDTO() {
     }
@@ -62,4 +71,5 @@ public class CustomerDTO implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

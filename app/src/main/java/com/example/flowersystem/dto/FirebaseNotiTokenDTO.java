@@ -1,13 +1,23 @@
-package com.prm.flowershop.dto;
+package com.example.flowersystem.dto;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
-public class FirebaseNotiTokenDTO{
+import java.io.Serializable;
+
+public class FirebaseNotiTokenDTO implements Serializable {
     private String token;
 
+    public FirebaseNotiTokenDTO(String token) {
+        this.token = token;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public FirebaseNotiTokenDTO() {
+    }
 }
