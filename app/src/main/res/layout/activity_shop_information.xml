@@ -4,12 +4,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShopInformationActivity" android:orientation="vertical">
-<fragment
-    android:layout_width="match_parent"
-    android:layout_height="300dp"
-    android:id="@+id/mapFragment"
-    class="com.example.flowersystem.ShopMapsFragment"
-    tools:layout="@layout/fragment_shop_maps"
-    />
+    android:layout_marginHorizontal="10dp"
+    android:orientation="vertical"
+    tools:context=".ShopInformationActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="100dp">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvShopName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="Shop Hoa"
+        android:textColor="@color/pink"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone: "
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvShopPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0123456789"
+            android:textSize="15sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address: "
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvShopAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FPTU, D1, Long Thạnh Mỹ, Thủ Đức, HCM"
+            android:textSize="15sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        class="com.example.flowersystem.ShopMapsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        tools:layout="@layout/fragment_shop_maps" />
+    <RelativeLayout
+        android:id="@+id/loadingPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+    </RelativeLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>
