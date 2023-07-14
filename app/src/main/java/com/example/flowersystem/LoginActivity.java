@@ -1,24 +1,36 @@
 package com.example.flowersystem;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.flowersystem.api.ConnectionConfig;
+import com.example.flowersystem.api.CustomerApi;
 import com.example.flowersystem.api.JwtTokenManager;
 import com.example.flowersystem.api.LoginApi;
+import com.example.flowersystem.api.RetrofitClient;
+import com.example.flowersystem.dto.FirebaseNotiTokenDTO;
 import com.example.flowersystem.dto.JwtTokenDTO;
 import com.example.flowersystem.dto.LoginInforDTO;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -81,6 +93,43 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        askNotificationPermission();
+    }
+
+    private void sendFirebaseNotificationToServer() {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w("FETCH FCM", "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+                        // Get new FCM registration token
+                        String token = task.getResult();
+                        Log.d("Firebase msg token:", token);
+                        Retrofit retrofit = RetrofitClient.getInstance();
+                        CustomerApi customerApi = retrofit.create(CustomerApi.class);
+                        FirebaseNotiTokenDTO firebaseNotiTokenDTO = new FirebaseNotiTokenDTO();
+                        firebaseNotiTokenDTO.setToken(token);
+                        Call<Void> call = customerApi.updateCustomerNotificationToken(Constants.LOGGED_IN_CUSTOMER.getId(), firebaseNotiTokenDTO);
+                        call.enqueue(new Callback<Void>() {
+                            @Override
+                            public void onResponse(Call<Void> call, Response<Void> response) {
+                                Log.d("SEND_NOTI_TOKEN", response.code() + "");
+                                finish();
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<Void> call, Throwable t) {
+                                t.printStackTrace();
+                                finish();
+                            }
+                        });
+
+                    }
+                });
 
     }
 
@@ -113,9 +162,10 @@ public class LoginActivity extends AppCompatActivity {
                             tvLoginFailed.setVisibility(View.VISIBLE);
                         } else {
                             JwtTokenManager.JWT_TOKEN = "Bearer " + jwtTokenDTO.getToken();
+                            Constants.LOGGED_IN_CUSTOMER = jwtTokenDTO.getCustomer();
                             Intent intent = new Intent(LoginActivity.this, SearchActivity.class);
                             startActivity(intent);
-                            finish();
+                            sendFirebaseNotificationToServer();
                         }
                     }
 
@@ -145,4 +195,36 @@ public class LoginActivity extends AppCompatActivity {
         relativeLayoutLoading.setVisibility(View.GONE);
         relativeLayoutLoading.setClickable(false);
     }
+
+    // [START ask_post_notifications]
+    // Declare the launcher at the top of your Activity/Fragment:
+    private final ActivityResultLauncher<String> requestPermissionLauncher =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+                if (isGranted) {
+                    // FCM SDK (and your app) can post notifications.
+                } else {
+                    // TODO: Inform user that that your app will not show notifications.
+                }
+            });
+
+    private void askNotificationPermission() {
+        // This is only necessary for API level >= 33 (TIRAMISU)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) ==
+                    PackageManager.PERMISSION_GRANTED) {
+                // FCM SDK (and your app) can post notifications.
+            } else if (shouldShowRequestPermissionRationale(android.Manifest.permission.POST_NOTIFICATIONS)) {
+                // TODO: display an educational UI explaining to the user the features that will be enabled
+                //       by them granting the POST_NOTIFICATION permission. This UI should provide the user
+                //       "OK" and "No thanks" buttons. If the user selects "OK," directly request the permission.
+                //       If the user selects "No thanks," allow the user to continue without notifications.
+            } else {
+                // Directly ask for the permission
+                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+            }
+        }
+    }
+    // [END ask_post_notifications]
+
+
 }

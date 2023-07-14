@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "78354508511",
+    "project_id": "prm392-a9f7e",
+    "storage_bucket": "prm392-a9f7e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78354508511:android:daac5d82458ba01ae5976a",
+        "android_client_info": {
+          "package_name": "com.example.flowersystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "78354508511-rehbnjkem32ginf5qacrnut1ke2ie3db.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpSv5vGXb1FcFm6WlM4g3tD5AtRNk1ssQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "78354508511-rehbnjkem32ginf5qacrnut1ke2ie3db.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
