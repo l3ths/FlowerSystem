@@ -64,13 +64,14 @@ public class FlowerDetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Retrofit retrofit = RetrofitClient.getInstance();
                 CartApi cartApi = retrofit.create(CartApi.class);
-                CartDTO cart = new CartDTO(flowerDTO, quantity);
+                FlowerDTO flower = new FlowerDTO(flowerDTO.getId());
+                CartDTO cart = new CartDTO(flower, 1);
                 try {
                     Call<CartDTO> call = cartApi.addToCart(1L, cart);
                     call.enqueue(new Callback() {
                         @Override
                         public void onResponse(Call call, Response response) {
-                            Toast.makeText(FlowerDetailActivity.this, "Đã thêm vào giỏ hàng!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(FlowerDetailActivity.this, "Đã thêm vào giỏ hàng!"+response.code(), Toast.LENGTH_SHORT).show();
 
                         }
 
