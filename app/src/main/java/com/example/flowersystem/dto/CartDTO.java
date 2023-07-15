@@ -5,14 +5,14 @@ import java.io.Serializable;
 
 public class CartDTO implements Serializable {
     private Long id;
-    private FlowerDTO fLowerDTO;
+    private FlowerDTO flowerDTO;
     private int quantity;
 
     public CartDTO() {
     }
 
-    public CartDTO(FlowerDTO fLowerDTO, int quantity) {
-        this.fLowerDTO = fLowerDTO;
+    public CartDTO(FlowerDTO flowerDTO, int quantity) {
+        this.flowerDTO = flowerDTO;
         this.quantity = quantity;
     }
 
@@ -24,12 +24,12 @@ public class CartDTO implements Serializable {
         this.id = id;
     }
 
-    public FlowerDTO getfLowerDTO() {
-        return fLowerDTO;
+    public FlowerDTO getFlowerDTO() {
+        return flowerDTO;
     }
 
-    public void setfLowerDTO(FlowerDTO fLowerDTO) {
-        this.fLowerDTO = fLowerDTO;
+    public void setFlowerDTO(FlowerDTO flowerDTO) {
+        this.flowerDTO = flowerDTO;
     }
 
     public int getQuantity() {

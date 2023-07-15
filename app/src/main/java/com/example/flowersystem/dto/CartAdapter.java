@@ -35,7 +35,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CartDTO cartDTO = cartList.get(position);
-        FlowerDTO flowerDTO = cartDTO.getfLowerDTO();
+        FlowerDTO flowerDTO = cartDTO.getFlowerDTO();
         holder.tvCartName.setText(flowerDTO.getFlowerName());
         holder.tvCartPrice.setText(flowerDTO.getUnitPrice() + "");
         holder.tvQuantity.setText(cartDTO.getQuantity());
