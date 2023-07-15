@@ -16,6 +16,7 @@ import com.example.flowersystem.api.CartApi;
 import com.example.flowersystem.api.FlowerApi;
 import com.example.flowersystem.api.RetrofitClient;
 import com.example.flowersystem.dto.CartDTO;
+import com.example.flowersystem.dto.CustomerDTO;
 import com.example.flowersystem.dto.Flower;
 import com.example.flowersystem.dto.FlowerDTO;
 
@@ -40,6 +41,7 @@ public class FlowerDetailActivity extends AppCompatActivity {
     int quantity;
     int maxQuantity;
     FlowerDTO flowerDTO;
+    CustomerDTO CUSTOMER = Constants.LOGGED_IN_CUSTOMER;
 
 
     @Override
@@ -67,7 +69,7 @@ public class FlowerDetailActivity extends AppCompatActivity {
                 FlowerDTO flower = new FlowerDTO(flowerDTO.getId());
                 CartDTO cart = new CartDTO(flower, quantity);
                 try {
-                    Call<CartDTO> call = cartApi.addToCart(1L, cart);
+                    Call<CartDTO> call = cartApi.addToCart(CUSTOMER.getId(), cart);
                     call.enqueue(new Callback() {
                         @Override
                         public void onResponse(Call call, Response response) {

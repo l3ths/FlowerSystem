@@ -12,6 +12,7 @@ import com.example.flowersystem.api.FlowerApi;
 import com.example.flowersystem.api.RetrofitClient;
 import com.example.flowersystem.dto.CartAdapter;
 import com.example.flowersystem.dto.CartDTO;
+import com.example.flowersystem.dto.CustomerDTO;
 import com.example.flowersystem.dto.FlowerDTO;
 import com.example.flowersystem.dto.SearchFlowerAdapter;
 
@@ -26,6 +27,7 @@ public class CartActivity extends AppCompatActivity {
     RecyclerView rvCart;
     TextView tvTotal;
     CartAdapter adapter;
+    CustomerDTO CUSTOMER = Constants.LOGGED_IN_CUSTOMER;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +48,7 @@ public class CartActivity extends AppCompatActivity {
         Retrofit retrofit = RetrofitClient.getInstance();
         CartApi cartApi = retrofit.create(CartApi.class);
         try {
-            Call<List<CartDTO>> call = cartApi.getAllCartByID(1L);
+            Call<List<CartDTO>> call = cartApi.getAllCartByID(CUSTOMER.getId());
             call.enqueue(new Callback<List<CartDTO>>() {
                 @Override
                 public void onResponse(Call<List<CartDTO>> call, Response<List<CartDTO>> response) {
