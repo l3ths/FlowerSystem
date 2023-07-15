@@ -38,7 +38,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         FlowerDTO flowerDTO = cartDTO.getFlowerDTO();
         holder.tvCartName.setText(flowerDTO.getFlowerName());
         holder.tvCartPrice.setText(flowerDTO.getUnitPrice() + "");
-        holder.tvQuantity.setText(cartDTO.getQuantity());
+        holder.tvQuantity.setText(cartDTO.getQuantity()+"");
         holder.tvCartDetail.setText(flowerDTO.getFlowerDescription());
         Glide.with(context)
                 .load(flowerDTO.getImage())

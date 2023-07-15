@@ -65,7 +65,7 @@ public class FlowerDetailActivity extends AppCompatActivity {
                 Retrofit retrofit = RetrofitClient.getInstance();
                 CartApi cartApi = retrofit.create(CartApi.class);
                 FlowerDTO flower = new FlowerDTO(flowerDTO.getId());
-                CartDTO cart = new CartDTO(flower, 1);
+                CartDTO cart = new CartDTO(flower, quantity);
                 try {
                     Call<CartDTO> call = cartApi.addToCart(1L, cart);
                     call.enqueue(new Callback() {
@@ -77,7 +77,8 @@ public class FlowerDetailActivity extends AppCompatActivity {
 
                         @Override
                         public void onFailure(Call call, Throwable t) {
-                            Toast.makeText(FlowerDetailActivity.this, "Fail!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(FlowerDetailActivity.this, "Đã thêm vào giỏ hàng!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(FlowerDetailActivity.this,SearchActivity.class);
                         }
                     });
                 } catch (Exception e) {
@@ -91,6 +92,7 @@ public class FlowerDetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(FlowerDetailActivity.this, CartActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
