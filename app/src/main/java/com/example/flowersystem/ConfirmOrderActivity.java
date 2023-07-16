@@ -22,6 +22,7 @@ import com.example.flowersystem.dto.CartAdapter;
 import com.example.flowersystem.dto.CartDTO;
 import com.example.flowersystem.dto.ConfirmOrderAdapter;
 import com.example.flowersystem.dto.CustomerDTO;
+import com.example.flowersystem.dto.MessageDTO;
 import com.example.flowersystem.dto.OrderDTO;
 
 import java.util.List;
@@ -44,6 +45,9 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     RadioButton rbPostPaid;
     RadioButton rbPrePaid;
     ImageView ivBack;
+    ImageView ivOrders;
+    ImageView ivHome;
+    ImageView ivNotification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +63,37 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         rbPostPaid = findViewById(R.id.rbPostPaid);
         rbPrePaid = findViewById(R.id.rbPrePaid);
         ivBack = findViewById(R.id.ivBack);
+        ivOrders = findViewById(R.id.ivOrders);
+        ivHome = findViewById(R.id.ivHome);
+        ivNotification = findViewById(R.id.ivNotification);
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+
+        ivOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConfirmOrderActivity.this, OrdersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConfirmOrderActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConfirmOrderActivity.this, NotificationActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -80,18 +111,18 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                 if (rbPostPaid.isChecked()) {
                     orderDTO.setPaymentMethod("COD");
                     try {
-                        Call<OrderDTO> call = orderApi.createOrder(CUSTOMER.getId(), orderDTO);
-                        call.enqueue(new Callback<OrderDTO>() {
+                        Call<MessageDTO> call = orderApi.createOrder(CUSTOMER.getId(),orderDTO);
+                        call.enqueue(new Callback<MessageDTO>() {
                             @Override
-                            public void onResponse(Call<OrderDTO> call, Response<OrderDTO> response) {
-                                Toast.makeText(ConfirmOrderActivity.this, "Success!", Toast.LENGTH_SHORT).show();
-                            }
-
-                            @Override
-                            public void onFailure(Call<OrderDTO> call, Throwable t) {
+                            public void onResponse(Call<MessageDTO> call, Response<MessageDTO> response) {
                                 Toast.makeText(ConfirmOrderActivity.this, "Đặt hàng thành công!", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(ConfirmOrderActivity.this, SearchActivity.class);
                                 startActivity(intent);
+                            }
+
+                            @Override
+                            public void onFailure(Call<MessageDTO> call, Throwable t) {
+                                Toast.makeText(ConfirmOrderActivity.this, "Fail!", Toast.LENGTH_SHORT).show();
                             }
                         });
                     } catch (Exception e) {

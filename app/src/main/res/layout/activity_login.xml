@@ -7,7 +7,7 @@
     android:background="#FFDAC1"
     tools:context=".LoginActivity">
     <View
-        android:layout_width="375dp"
+        android:layout_width="350dp"
         android:layout_height="598dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="72dp"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
     <EditText
         android:id="@+id/etPhone"
-        android:layout_width="350dp"
+        android:layout_width="330dp"
         android:layout_height="45dp"
         android:layout_marginTop="2dp"
         android:background="@drawable/botron_edittext"
@@ -29,7 +29,7 @@
 
     <EditText
         android:id="@+id/etPassword"
-        android:layout_width="350dp"
+        android:layout_width="330dp"
         android:layout_height="45dp"
         android:layout_marginTop="2dp"
         android:background="@drawable/botron_edittext"
@@ -84,19 +84,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/tvForgotPasswordRedirect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="Quên mật khẩu?"
-        android:textColor="#FF5722"
-        android:textSize="15dp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="@+id/etPassword"
-        app:layout_constraintTop_toTopOf="@+id/etPassword" />
-
-<!--    <TextView-->
+    <!--    <TextView-->
 <!--        android:id="@+id/textView2"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
@@ -108,6 +96,18 @@
 <!--        app:layout_constraintHorizontal_bias="0.498"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <TextView
+        android:id="@+id/tvForgotPasswordRedirect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Quên mật khẩu?"
+        android:textColor="#FF5722"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/etPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <com.example.flowersystem.custom_textview.QuicksandRegularTextView
         android:id="@+id/textView2"

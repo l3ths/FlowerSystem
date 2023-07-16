@@ -42,7 +42,9 @@ public class FlowerDetailActivity extends AppCompatActivity {
     int maxQuantity;
     FlowerDTO flowerDTO;
     CustomerDTO CUSTOMER = Constants.LOGGED_IN_CUSTOMER;
-
+    ImageView ivOrders;
+    ImageView ivHome;
+    ImageView ivNotification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,9 @@ public class FlowerDetailActivity extends AppCompatActivity {
         llAddToCart = findViewById(R.id.llAddToCart);
         tvBuyNow = findViewById(R.id.tvBuyNow);
         tvAddToCart = findViewById(R.id.tvAddToCart);
+        ivOrders = findViewById(R.id.ivOrders);
+        ivHome = findViewById(R.id.ivHome);
+        ivNotification = findViewById(R.id.ivNotification);
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -157,6 +162,29 @@ public class FlowerDetailActivity extends AppCompatActivity {
             }
         });
 
+        ivHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FlowerDetailActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FlowerDetailActivity.this, OrdersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FlowerDetailActivity.this, NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

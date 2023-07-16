@@ -38,6 +38,9 @@ public class CartActivity extends AppCompatActivity {
     CustomerDTO CUSTOMER = Constants.LOGGED_IN_CUSTOMER;
     Button btnOrder;
     ImageView ivBack;
+    ImageView ivOrders;
+    ImageView ivHome;
+    ImageView ivNotification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,9 @@ public class CartActivity extends AppCompatActivity {
         rvCart = findViewById(R.id.rvCart);
         tvTotal = findViewById(R.id.tvTotalCart);
         btnOrder = findViewById(R.id.btnOrder);
+        ivOrders = findViewById(R.id.ivOrders);
+        ivHome = findViewById(R.id.ivHome);
+        ivNotification = findViewById(R.id.ivNotification);
         rvCart.setLayoutManager(new LinearLayoutManager(CartActivity.this));
         adapter = new CartAdapter(CartActivity.this);
         rvCart.setAdapter(adapter);
@@ -67,6 +73,30 @@ public class CartActivity extends AppCompatActivity {
                     Intent intent = new Intent(CartActivity.this, ConfirmOrderActivity.class);
                     startActivity(intent);
                 }
+            }
+        });
+
+        ivOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CartActivity.this, OrdersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CartActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CartActivity.this, NotificationActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -29,6 +29,7 @@ public class SearchActivity extends AppCompatActivity {
     SearchFlowerAdapter adapter;
     ImageView ivCart;
     ImageView ivOrders;
+    ImageView ivNotification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class SearchActivity extends AppCompatActivity {
         rvSearch = findViewById(R.id.rvSearch);
         ivCart = findViewById(R.id.ivCart);
         ivOrders = findViewById(R.id.ivOrders);
+        ivNotification = findViewById(R.id.ivNotification);
 
         ivOrders.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +51,14 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SearchActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SearchActivity.this, NotificationActivity.class);
                 startActivity(intent);
             }
         });

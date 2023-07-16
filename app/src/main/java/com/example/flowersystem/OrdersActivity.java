@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -40,8 +41,8 @@ public class OrdersActivity extends AppCompatActivity {
     TextView tvCanceled;
     ImageView ivBack;
     String STATUS = Constants.OrderStatusNumber.CREATED;
-
-
+    ImageView ivHome;
+    ImageView ivNotification;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,10 +52,28 @@ public class OrdersActivity extends AppCompatActivity {
         tvShipped = findViewById(R.id.tvShipped);
         tvCanceled = findViewById(R.id.tvCanceled);
         ivBack = findViewById(R.id.ivBack);
+        ivHome = findViewById(R.id.ivHome);
+        ivNotification = findViewById(R.id.ivNotification);
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+
+        ivHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OrdersActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OrdersActivity.this, NotificationActivity.class);
+                startActivity(intent);
             }
         });
 
