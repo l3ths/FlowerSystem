@@ -95,9 +95,8 @@
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:background="@drawable/ic_launcher_background"
-            app:cornerRadius="50dp"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            android:background="@drawable/flower"
+            app:cornerRadius="50dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -110,17 +109,21 @@
                 android:id="@+id/lblName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="4"
+                android:layout_weight="3"
+                android:textSize="16dp"
+                android:gravity="start"
                 android:text="Họ và tên"
                 android:textStyle="bold" />
+
 
             <EditText
                 android:id="@+id/etName"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:text="Đặng Vỹ Khang" />
+                android:background="@drawable/shadowrow_custom"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:layout_weight="7"
+                android:text="Lê Thanh Huy" />
         </LinearLayout>
 
         <LinearLayout
@@ -134,17 +137,20 @@
                 android:id="@+id/lblJoinDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="4"
+                android:layout_weight="3"
+                android:textSize="16dp"
+                android:gravity="start"
                 android:text="Ngày tham gia"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
                 android:id="@+id/tvJoinDate"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:text="01.05.2022" />
+                android:background="@drawable/shadowrow_custom"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:layout_weight="7"
+                android:text="01/05/2002" />
         </LinearLayout>
 
         <LinearLayout
@@ -158,16 +164,19 @@
                 android:id="@+id/lblPhone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="4"
+                android:layout_weight="3"
+                android:textSize="16dp"
+                android:gravity="start"
                 android:text="Số điện thoại"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etPhone"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="6"
+                android:background="@drawable/shadowrow_custom"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:layout_weight="7"
                 android:text="0823.801.585" />
         </LinearLayout>
 
@@ -182,22 +191,26 @@
                 android:id="@+id/lblEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="4"
+                android:layout_weight="3"
+                android:textSize="16dp"
                 android:text="Email"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etEmail"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="6"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/shadowrow_custom"
+                android:layout_weight="7"
                 android:text="khangdvse@fpt.edu.vn" />
         </LinearLayout>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/button_nonesolid"
             android:hint="Tài khoản liên kết"
             android:textStyle="italic" />
 
@@ -213,10 +226,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_weight="4"
-                android:backgroundTint="#FF9100"
+                android:background="@drawable/button_custom"
+                android:textSize="20dp"
                 android:text="THAY ĐỔI"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </LinearLayout>
