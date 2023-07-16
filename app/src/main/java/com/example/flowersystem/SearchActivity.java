@@ -27,6 +27,7 @@ public class SearchActivity extends AppCompatActivity {
     RecyclerView rvSearch;
     SearchFlowerAdapter adapter;
     ImageView ivCart;
+    ImageView ivOrders;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,15 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         rvSearch = findViewById(R.id.rvSearch);
         ivCart = findViewById(R.id.ivCart);
+        ivOrders = findViewById(R.id.ivOrders);
 
+        ivOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SearchActivity.this, OrdersActivity.class);
+                startActivity(intent);
+            }
+        });
         ivCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

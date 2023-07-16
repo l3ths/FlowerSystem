@@ -81,6 +81,7 @@ public class FlowerDetailActivity extends AppCompatActivity {
                         public void onFailure(Call call, Throwable t) {
                             Toast.makeText(FlowerDetailActivity.this, "Đã thêm vào giỏ hàng!", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(FlowerDetailActivity.this,SearchActivity.class);
+                            startActivity(intent);
                         }
                     });
                 } catch (Exception e) {
