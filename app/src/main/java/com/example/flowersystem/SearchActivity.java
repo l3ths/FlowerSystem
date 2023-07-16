@@ -14,6 +14,7 @@ import com.example.flowersystem.api.FlowerApi;
 import com.example.flowersystem.api.RetrofitClient;
 import com.example.flowersystem.dto.Flower;
 import com.example.flowersystem.dto.FlowerDTO;
+import com.example.flowersystem.dto.ProfileActivity;
 import com.example.flowersystem.dto.SearchFlowerAdapter;
 
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class SearchActivity extends AppCompatActivity {
     ImageView ivCart;
     ImageView ivOrders;
     ImageView ivNotification;
+    ImageView ivPersonal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class SearchActivity extends AppCompatActivity {
         ivCart = findViewById(R.id.ivCart);
         ivOrders = findViewById(R.id.ivOrders);
         ivNotification = findViewById(R.id.ivNotification);
+        ivPersonal = findViewById(R.id.ivPersonal);
 
         ivOrders.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +62,14 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SearchActivity.this, NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivPersonal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SearchActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });
