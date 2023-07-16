@@ -23,4 +23,6 @@ public interface CartApi {
     public Call<CartDTO> addToCart(@Path("customerId") Long customerId,@Body CartDTO cartDTO);
     @DELETE("/v1/carts/{id}")
     public Call<CartDTO> deleteCart(@Path("id") Long id);
+    @DELETE("/v1/carts/customer/{customerId}")
+    public Call<CartDTO> deleteAllCart(@Path("customerId") Long customerId);
 }
