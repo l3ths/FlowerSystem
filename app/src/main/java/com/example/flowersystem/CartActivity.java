@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.flowersystem.api.CartApi;
 import com.example.flowersystem.api.FlowerApi;
@@ -50,8 +51,13 @@ public class CartActivity extends AppCompatActivity {
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CartActivity.this, ConfirmOrderActivity.class);
-                startActivity(intent);
+                List<CartDTO> list = adapter.getTasks();
+                if (list == null || list.size() == 0) {
+                    Toast.makeText(CartActivity.this, "Giỏ hàng trống", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(CartActivity.this, ConfirmOrderActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -75,6 +81,9 @@ public class CartActivity extends AppCompatActivity {
                     double total = 0;
                     for (int i = 0; i < list.size(); i++) {
                         total += list.get(i).getQuantity() * list.get(i).getFlowerDTO().getUnitPrice();
+                    }
+                    if (total == 0) {
+                        Toast.makeText(CartActivity.this, "Giỏ hàng trống", Toast.LENGTH_SHORT).show();
                     }
                     tvTotal.setText(total + "");
                 }
