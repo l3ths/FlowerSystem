@@ -13,6 +13,8 @@
         android:layout_marginTop="20dp"
         android:text="Thông tin cá nhân"
         android:textSize="30dp"
+        android:textColor="#FF9E00"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,8 +32,8 @@
 
     <ImageView
         android:id="@+id/ivEdit"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/tvProfile"
         app:layout_constraintEnd_toEndOf="parent"
