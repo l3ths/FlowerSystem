@@ -79,29 +79,29 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                 orderDTO.setOrderStatus(Constants.OrderStatusNumber.CREATED);
                 if (rbPostPaid.isChecked()) {
                     orderDTO.setPaymentMethod("COD");
+                    try {
+                        Call<OrderDTO> call = orderApi.createOrder(CUSTOMER.getId(),orderDTO);
+                        call.enqueue(new Callback<OrderDTO>() {
+                            @Override
+                            public void onResponse(Call<OrderDTO> call, Response<OrderDTO> response) {
+                                Toast.makeText(ConfirmOrderActivity.this, "Success!", Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onFailure(Call<OrderDTO> call, Throwable t) {
+                                Toast.makeText(ConfirmOrderActivity.this, "Đặt hàng thành công!", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(ConfirmOrderActivity.this,SearchActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 } else if (rbPrePaid.isChecked()) {
-                    return;
+                    Intent intent = new Intent(ConfirmOrderActivity.this, PaymentMethodActivity.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(ConfirmOrderActivity.this, "Chọn phương thức thanh toán!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                try {
-                    Call<OrderDTO> call = orderApi.createOrder(CUSTOMER.getId(),orderDTO);
-                    call.enqueue(new Callback<OrderDTO>() {
-                        @Override
-                        public void onResponse(Call<OrderDTO> call, Response<OrderDTO> response) {
-                            Toast.makeText(ConfirmOrderActivity.this, "Success!", Toast.LENGTH_SHORT).show();
-                        }
-
-                        @Override
-                        public void onFailure(Call<OrderDTO> call, Throwable t) {
-                            Toast.makeText(ConfirmOrderActivity.this, "Đặt hàng thành công!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(ConfirmOrderActivity.this,SearchActivity.class);
-                            startActivity(intent);
-                        }
-                    });
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }
             }
         });
