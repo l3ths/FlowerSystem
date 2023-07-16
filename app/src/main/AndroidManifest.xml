@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission
+        android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -112,8 +114,8 @@
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/white" /> <!-- VNPAY -->
         <!--
-Acvitiy d? trigger k?t qu? thanh toán t? app mobile banking
- khi m? l?i activity này thì b?n c?n ki?m tra tr?ng thái thanh toán c?a don hàng
+Acvitiy d? trigger k?t qu? thanh toï¿½n t? app mobile banking
+ khi m? l?i activity nï¿½y thï¿½ b?n c?n ki?m tra tr?ng thï¿½i thanh toï¿½n c?a don hï¿½ng
         -->
         <activity
             android:name=".PaymentResultActivity"
