@@ -63,7 +63,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="16dp"
-            android:src="@drawable/ic_order_clicked" />
+            android:src="@drawable/ic_order" />
 
         <ImageView
             android:id="@+id/ivHome"
@@ -87,7 +87,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="18dp"
-            android:src="@drawable/ic_personal" />
+            android:src="@drawable/ic_personal_clicked" />
     </LinearLayout>
 
     <LinearLayout

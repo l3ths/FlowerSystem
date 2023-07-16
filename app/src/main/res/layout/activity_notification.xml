@@ -47,7 +47,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="18dp"
-            android:src="@drawable/ic_noti" />
+            android:src="@drawable/ic_noti_clicked" />
 
         <ImageView
             android:id="@+id/ivPersonal"
