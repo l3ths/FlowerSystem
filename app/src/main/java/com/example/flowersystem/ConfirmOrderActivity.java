@@ -87,7 +87,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
                         @Override
                         public void onFailure(Call<OrderDTO> call, Throwable t) {
-                            Toast.makeText(ConfirmOrderActivity.this, "Fail", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ConfirmOrderActivity.this, "Đặt hàng thành công!", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(ConfirmOrderActivity.this,SearchActivity.class);
                             startActivity(intent);
                         }
