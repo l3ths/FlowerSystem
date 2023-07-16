@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,7 @@ public class CartActivity extends AppCompatActivity {
     CartAdapter adapter;
     CustomerDTO CUSTOMER = Constants.LOGGED_IN_CUSTOMER;
     Button btnOrder;
+    ImageView ivBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,13 @@ public class CartActivity extends AppCompatActivity {
         rvCart.setLayoutManager(new LinearLayoutManager(CartActivity.this));
         adapter = new CartAdapter(CartActivity.this);
         rvCart.setAdapter(adapter);
+        ivBack = findViewById(R.id.ivBack);
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override

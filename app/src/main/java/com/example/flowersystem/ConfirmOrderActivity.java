@@ -43,7 +43,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     Button btnConfirmOrder;
     RadioButton rbPostPaid;
     RadioButton rbPrePaid;
-    TextView tvMethod;
+    ImageView ivBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +58,13 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         tvCustomerPhone = findViewById(R.id.tvCustomerPhone);
         rbPostPaid = findViewById(R.id.rbPostPaid);
         rbPrePaid = findViewById(R.id.rbPrePaid);
+        ivBack = findViewById(R.id.ivBack);
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         rvConfirm.setLayoutManager(new LinearLayoutManager(ConfirmOrderActivity.this));
         adapter = new ConfirmOrderAdapter(ConfirmOrderActivity.this);

@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,7 @@ public class OrdersActivity extends AppCompatActivity {
     TextView tvShipping;
     TextView tvShipped;
     TextView tvCanceled;
+    ImageView ivBack;
     String STATUS = Constants.OrderStatusNumber.CREATED;
 
 
@@ -48,6 +50,13 @@ public class OrdersActivity extends AppCompatActivity {
         tvShipping = findViewById(R.id.tvShipping);
         tvShipped = findViewById(R.id.tvShipped);
         tvCanceled = findViewById(R.id.tvCanceled);
+        ivBack = findViewById(R.id.ivBack);
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         tvShipping.setOnClickListener(new View.OnClickListener() {
             @Override
