@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFE8D8"
     tools:context=".SearchActivity">
 
     <SearchView
         android:id="@+id/searchView"
-        android:layout_width="362dp"
+        android:layout_width="350dp"
+        android:background="@drawable/searchbox_custom"
+        android:layout_margin="10dp"
         android:layout_height="50dp"
         app:iconifiedByDefault="false"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +62,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="13dp"
-            android:src="@drawable/ic_home_clicked"
+            android:src="@drawable/flower"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,9 +90,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSearch"
         android:layout_width="match_parent"
-        android:layout_height="599dp"
+        android:layout_height="690dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
