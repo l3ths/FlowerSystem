@@ -47,6 +47,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         }
         OrderDetailAdapter adapter = new OrderDetailAdapter(context);
         adapter.setTasks(orderFlower.getList());
+
         holder.rvFlower.setLayoutManager(new LinearLayoutManager(context));
         holder.rvFlower.setAdapter(adapter);
 

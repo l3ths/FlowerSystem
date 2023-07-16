@@ -60,6 +60,12 @@ public class FlowerDetailActivity extends AppCompatActivity {
         llAddToCart = findViewById(R.id.llAddToCart);
         tvBuyNow = findViewById(R.id.tvBuyNow);
         tvAddToCart = findViewById(R.id.tvAddToCart);
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         llAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +101,6 @@ public class FlowerDetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(FlowerDetailActivity.this, CartActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
