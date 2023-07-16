@@ -9,10 +9,10 @@
 
     <SearchView
         android:id="@+id/searchView"
-        android:layout_width="350dp"
-        android:background="@drawable/searchbox_custom"
-        android:layout_margin="10dp"
+        android:layout_width="334dp"
         android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/searchbox_custom"
         app:iconifiedByDefault="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -89,11 +89,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSearch"
-        android:layout_width="match_parent"
-        android:layout_height="690dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="383dp"
+        android:layout_height="610dp"
         android:layout_marginStart="10dp"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
