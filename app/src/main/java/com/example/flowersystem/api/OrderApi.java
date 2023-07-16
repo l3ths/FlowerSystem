@@ -1,6 +1,7 @@
 package com.example.flowersystem.api;
 
 
+import com.example.flowersystem.dto.MessageDTO;
 import com.example.flowersystem.dto.OrderDTO;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public interface OrderApi {
     @GET("/v1/orders/{id}")
     public Call<OrderDTO> getOrderById(@Path("id") Long id);
     @POST("/v1/orders/{customerId}")
-    public Call<OrderDTO> createOrder(@Path("customerId") Long customerId, @Body OrderDTO orderDTO);
+    public Call<MessageDTO> createOrder(@Path("customerId") Long customerId, @Body OrderDTO orderDTO);
     @GET("/v1/orders/customer/{customerId}")
     public Call<List<OrderDTO>> getAllOrderByCustomerID(@Path("customerId") Long customerId);
 }
