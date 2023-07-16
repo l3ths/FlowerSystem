@@ -80,7 +80,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                 if (rbPostPaid.isChecked()) {
                     orderDTO.setPaymentMethod("COD");
                     try {
-                        Call<OrderDTO> call = orderApi.createOrder(CUSTOMER.getId(),orderDTO);
+                        Call<OrderDTO> call = orderApi.createOrder(CUSTOMER.getId(), orderDTO);
                         call.enqueue(new Callback<OrderDTO>() {
                             @Override
                             public void onResponse(Call<OrderDTO> call, Response<OrderDTO> response) {
@@ -90,7 +90,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                             @Override
                             public void onFailure(Call<OrderDTO> call, Throwable t) {
                                 Toast.makeText(ConfirmOrderActivity.this, "Đặt hàng thành công!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(ConfirmOrderActivity.this,SearchActivity.class);
+                                Intent intent = new Intent(ConfirmOrderActivity.this, SearchActivity.class);
                                 startActivity(intent);
                             }
                         });
@@ -98,8 +98,30 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 } else if (rbPrePaid.isChecked()) {
-                    Intent intent = new Intent(ConfirmOrderActivity.this, PaymentMethodActivity.class);
-                    startActivity(intent);
+                    orderDTO.setPaymentMethod("PREPAID");
+                    try {
+                        Call<OrderDTO> call = orderApi.createPrepaidOrder(CUSTOMER.getId(), orderDTO);
+                        call.enqueue(new Callback<OrderDTO>() {
+                            @Override
+                            public void onResponse(Call<OrderDTO> call, Response<OrderDTO> response) {
+//                                Toast.makeText(ConfirmOrderActivity.this, "Success!", Toast.LENGTH_SHORT).show();
+                                //Choose bank
+                                Intent intent = new Intent(ConfirmOrderActivity.this, PaymentMethodActivity.class);
+                                intent.putExtra("ORDER_DTO", response.body());
+                                startActivity(intent);
+                            }
+
+                            @Override
+                            public void onFailure(Call<OrderDTO> call, Throwable t) {
+                                Toast.makeText(ConfirmOrderActivity.this, "Đặt hàng thành công!", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(ConfirmOrderActivity.this, SearchActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
                 } else {
                     Toast.makeText(ConfirmOrderActivity.this, "Chọn phương thức thanh toán!", Toast.LENGTH_SHORT).show();
                 }

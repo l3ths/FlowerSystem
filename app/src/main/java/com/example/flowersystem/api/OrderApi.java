@@ -18,4 +18,7 @@ public interface OrderApi {
     public Call<OrderDTO> createOrder(@Path("customerId") Long customerId, @Body OrderDTO orderDTO);
     @GET("/v1/orders/customer/{customerId}")
     public Call<List<OrderDTO>> getAllOrderByCustomerID(@Path("customerId") Long customerId);
+    @POST("/v1/orders/prepaid/{customerId}")
+    public Call<OrderDTO> createPrepaidOrder(@Path("customerId") Long customerId, @Body OrderDTO orderDTO);
+
 }

@@ -35,25 +35,20 @@ import javax.crypto.spec.SecretKeySpec;
 
 
 public class PrepaidActivity extends AppCompatActivity {
-
-    Button btnTestPayment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prepaid);
-        btnTestPayment = findViewById(R.id.btnTestPayment);
-        OrderDTO orderDTO = new OrderDTO();
-        btnTestPayment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    openSdk(orderDTO);
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
+        OrderDTO orderDTO = (OrderDTO) getIntent().getSerializableExtra("ORDER_DTO");
+        if (orderDTO != null) {
+            try {
+                openSdk(orderDTO);
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
             }
-        });
+
+        }
+
     }
 
     public void openSdk(OrderDTO orderDTO) throws UnsupportedEncodingException {
