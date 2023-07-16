@@ -43,7 +43,6 @@ public class CartActivity extends AppCompatActivity {
         rvCart = findViewById(R.id.rvCart);
         tvTotal = findViewById(R.id.tvTotalCart);
         btnOrder = findViewById(R.id.btnOrder);
-String a = Constants.OrderStatusString.CANCELLED;
         rvCart.setLayoutManager(new LinearLayoutManager(CartActivity.this));
         adapter = new CartAdapter(CartActivity.this);
         rvCart.setAdapter(adapter);
