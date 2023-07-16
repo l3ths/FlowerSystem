@@ -209,7 +209,7 @@
                 android:id="@+id/rbPrePaid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Thanh toán trực tuyến." />
+                android:text="Thanh toán trực tuyến (VNPAY)" />
         </RadioGroup>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <Button
