@@ -32,28 +32,27 @@
         app:layout_constraintTop_toBottomOf="@+id/ivDetailFlowerImage">
 
     </com.example.flowersystem.custom_textview.LobsterTextView>
+
     <TextView
         android:id="@+id/tvDetailFlowerPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
         android:text="550000"
-        android:textColor="#FF0000"
+        android:textColor="#6f473e"
         android:textSize="25dp"
         android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="@+id/tvDetailFlowerName"
+        app:layout_constraintEnd_toStartOf="@+id/textView22"
         app:layout_constraintTop_toBottomOf="@+id/tvDetailFlowerName" />
 
     <TextView
         android:id="@+id/tvDetailFlowerDetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="369dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
         android:text="Sản phẩm bao gồm:\n - 2kg Vải tươi. \n - Hoa Baby\n - Lá lạc"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@+id/tvDetailFlowerPrice"
+        app:layout_constraintStart_toStartOf="@+id/tvDetailFlowerName"
         app:layout_constraintTop_toBottomOf="@+id/tvDetailFlowerPrice" />
 
     <LinearLayout
@@ -140,13 +139,13 @@
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Đ"
         android:layout_marginStart="5dp"
-        android:textColor="#FF0000"
+        android:text="Đ"
+        android:textColor="#6f473e"
         android:textSize="25dp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/tvDetailFlowerPrice"
-        app:layout_constraintStart_toEndOf="@+id/tvDetailFlowerPrice"
+        app:layout_constraintEnd_toEndOf="@+id/tvDetailFlowerDetails"
         app:layout_constraintTop_toTopOf="@+id/tvDetailFlowerPrice" />
 
     <LinearLayout
