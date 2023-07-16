@@ -7,10 +7,10 @@
     tools:context=".ConfirmOrderActivity">
 
     <TextView
-        android:id="@+id/tvTotalPrice3"
+        android:id="@+id/tvConfirmTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1100000 Đ"
+        android:text="0.0"
         android:textColor="#FF0000"
         android:textSize="22dp"
         android:textStyle="italic"
@@ -29,147 +29,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/btnConfirmOrder"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnConfirmOrder" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:padding="10dp"
-        android:layout_marginTop="20dp"
-        android:background="#3DD9D9D9"
-        android:paddingBottom="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout11">
-
-        <TextView
-            android:id="@+id/tvDetailFlowerDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Số lượng : "
-            android:textSize="13dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDetailFlowerPrice" />
-
-        <TextView
-            android:id="@+id/tvDetailFlowerName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bó hoa vải thiều"
-            android:textSize="17dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvDetailFlowerPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="550000"
-            android:textColor="#FF0000"
-            android:textSize="15dp"
-            android:textStyle="italic"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDetailFlowerName" />
-
-        <TextView
-            android:id="@+id/tvQuantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="1"
-            android:textSize="13dp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvDetailFlowerDetails"
-            app:layout_constraintStart_toEndOf="@+id/tvDetailFlowerDetails"
-            app:layout_constraintTop_toTopOf="@+id/tvDetailFlowerDetails"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Đ"
-            android:textColor="#FF0000"
-            android:textSize="15dp"
-            android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="@+id/tvDetailFlowerPrice"
-            app:layout_constraintStart_toEndOf="@+id/tvDetailFlowerPrice"
-            app:layout_constraintTop_toTopOf="@+id/tvDetailFlowerPrice" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:padding="10dp"
-        android:layout_marginEnd="15dp"
-        android:background="#3DD9D9D9"
-        android:paddingBottom="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
-
-        <TextView
-            android:id="@+id/tvDetailFlowerDetails1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Số lượng : "
-            android:textSize="13dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDetailFlowerPrice1" />
-
-        <TextView
-            android:id="@+id/tvDetailFlowerName1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bó hoa vải thiều"
-            android:textSize="17dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvDetailFlowerPrice1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="550000"
-            android:textColor="#FF0000"
-            android:textSize="15dp"
-            android:textStyle="italic"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDetailFlowerName1" />
-
-        <TextView
-            android:id="@+id/tvQuantity1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="1"
-            android:textSize="13dp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvDetailFlowerDetails1"
-            app:layout_constraintStart_toEndOf="@+id/tvDetailFlowerDetails1"
-            app:layout_constraintTop_toTopOf="@+id/tvDetailFlowerDetails1"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/textView251"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Đ"
-            android:textColor="#FF0000"
-            android:textSize="15dp"
-            android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="@+id/tvDetailFlowerPrice1"
-            app:layout_constraintStart_toEndOf="@+id/tvDetailFlowerPrice1"
-            app:layout_constraintTop_toTopOf="@+id/tvDetailFlowerPrice1" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textView19"
@@ -257,7 +116,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView19">
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/ivCustomer"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:padding="10dp"
@@ -266,7 +125,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/textView33"
+            android:id="@+id/tvCustomerName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -274,27 +133,27 @@
             android:text="Mai Quân"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
-            app:layout_constraintTop_toTopOf="@+id/imageView5" />
+            app:layout_constraintStart_toEndOf="@+id/ivCustomer"
+            app:layout_constraintTop_toTopOf="@+id/ivCustomer" />
 
         <TextView
-            android:id="@+id/textView42"
+            android:id="@+id/tvCustomerPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="0979026731"
             android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="@+id/textView33"
-            app:layout_constraintTop_toBottomOf="@+id/textView33" />
+            app:layout_constraintStart_toStartOf="@+id/tvCustomerName"
+            app:layout_constraintTop_toBottomOf="@+id/tvCustomerName" />
 
         <TextView
-            android:id="@+id/textView43"
+            android:id="@+id/tvCustomerAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="s504, Vinhomes Grandpark, Tp Thủ Đức."
-            app:layout_constraintStart_toStartOf="@+id/textView42"
-            app:layout_constraintTop_toBottomOf="@+id/textView42" />
+            app:layout_constraintStart_toStartOf="@+id/tvCustomerPhone"
+            app:layout_constraintTop_toBottomOf="@+id/tvCustomerPhone" />
 
         <ImageView
             android:id="@+id/imageView14"
@@ -320,7 +179,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout8">
 
         <TextView
-            android:id="@+id/textView44"
+            android:id="@+id/tvMethod"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chọn hình thức thanh toán"
@@ -330,22 +189,24 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <RadioGroup
+            android:id="@+id/rg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView44">
+            app:layout_constraintTop_toBottomOf="@+id/tvMethod">
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/rbPostPaid"
                 android:layout_width="match_parent"
+                android:checked="true"
                 android:layout_height="wrap_content"
-                android:text="Thanh toán khi nhận " />
+                android:text="Thanh toán khi nhận hàng" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/rbPrePaid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Thanh toán trực tuyến." />
@@ -360,5 +221,26 @@
         android:layout_margin="10dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvConfirmOrder"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout11" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Đ"
+        android:textColor="#FF0000"
+        android:textSize="22dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/tvConfirmTotal"
+        app:layout_constraintStart_toEndOf="@+id/tvConfirmTotal"
+        app:layout_constraintTop_toTopOf="@+id/tvConfirmTotal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
