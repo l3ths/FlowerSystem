@@ -69,6 +69,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                 Retrofit retrofit = RetrofitClient.getInstance();
                 OrderApi orderApi = retrofit.create(OrderApi.class);
                 OrderDTO orderDTO = new OrderDTO();
+                orderDTO.setOrderStatus(Constants.OrderStatusNumber.CREATED);
                 if (rbPostPaid.isChecked()) {
                     orderDTO.setPaymentMethod("COD");
                 } else if (rbPrePaid.isChecked()) {

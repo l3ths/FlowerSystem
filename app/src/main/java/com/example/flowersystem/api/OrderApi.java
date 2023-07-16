@@ -3,6 +3,8 @@ package com.example.flowersystem.api;
 
 import com.example.flowersystem.dto.OrderDTO;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -14,4 +16,6 @@ public interface OrderApi {
     public Call<OrderDTO> getOrderById(@Path("id") Long id);
     @POST("/v1/orders/{customerId}")
     public Call<OrderDTO> createOrder(@Path("customerId") Long customerId, @Body OrderDTO orderDTO);
+    @GET("/v1/orders/customer/{customerId}")
+    public Call<List<OrderDTO>> getAllOrderByCustomerID(@Path("customerId") Long customerId);
 }
