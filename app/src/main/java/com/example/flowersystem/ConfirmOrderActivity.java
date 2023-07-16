@@ -44,6 +44,9 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     RadioButton rbPostPaid;
     RadioButton rbPrePaid;
     ImageView ivBack;
+    ImageView ivOrders;
+    ImageView ivHome;
+    ImageView ivNotification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +62,37 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         rbPostPaid = findViewById(R.id.rbPostPaid);
         rbPrePaid = findViewById(R.id.rbPrePaid);
         ivBack = findViewById(R.id.ivBack);
+        ivOrders = findViewById(R.id.ivOrders);
+        ivHome = findViewById(R.id.ivHome);
+        ivNotification = findViewById(R.id.ivNotification);
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+
+        ivOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConfirmOrderActivity.this, OrdersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConfirmOrderActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConfirmOrderActivity.this, NotificationActivity.class);
+                startActivity(intent);
             }
         });
 
