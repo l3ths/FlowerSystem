@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#3DD9D9D9"
+    android:padding="10dp"
+    android:paddingBottom="10dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/tvConfirmCartDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Số lượng : "
+        android:textSize="13dp"
+        app:layout_constraintStart_toStartOf="@+id/tvConfirmCartPrice"
+        app:layout_constraintTop_toBottomOf="@+id/tvConfirmCartPrice" />
+
+    <TextView
+        android:id="@+id/tvConfirmCartName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bó hoa vải thiều"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivConfirm"
+        app:layout_constraintTop_toTopOf="@+id/ivConfirm" />
+
+    <TextView
+        android:id="@+id/tvConfirmCartPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="550000"
+        android:textColor="#FF0000"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/tvConfirmCartName"
+        app:layout_constraintTop_toBottomOf="@+id/tvConfirmCartName" />
+
+    <TextView
+        android:id="@+id/tvConfirmQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="1"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvConfirmCartDetails"
+        app:layout_constraintStart_toEndOf="@+id/tvConfirmCartDetails"
+        app:layout_constraintTop_toTopOf="@+id/tvConfirmCartDetails"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Đ"
+        android:textColor="#FF0000"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/tvConfirmCartPrice"
+        app:layout_constraintStart_toEndOf="@+id/tvConfirmCartPrice"
+        app:layout_constraintTop_toTopOf="@+id/tvConfirmCartPrice" />
+
+    <ImageView
+        android:id="@+id/ivConfirm"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+</androidx.constraintlayout.widget.ConstraintLayout>

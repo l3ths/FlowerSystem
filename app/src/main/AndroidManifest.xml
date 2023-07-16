@@ -19,6 +19,9 @@
             android:name=".PrepaidActivity"
             android:exported="false" />
         <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".ShopInformationActivity"
             android:exported="false" />
         <!--
@@ -109,8 +112,8 @@
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/white" /> <!-- VNPAY -->
         <!--
-Acvitiy để trigger kết quả thanh toán từ app mobile banking
- khi mở lại activity này thì bạn cần kiểm tra trạng thái thanh toán của đơn hàng
+Acvitiy d? trigger k?t qu? thanh to�n t? app mobile banking
+ khi m? l?i activity n�y th� b?n c?n ki?m tra tr?ng th�i thanh to�n c?a don h�ng
         -->
         <activity
             android:name=".PaymentResultActivity"

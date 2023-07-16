@@ -1,6 +1,7 @@
 package com.example.flowersystem;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,8 +52,8 @@ public class SearchActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        rvSearch.setLayoutManager(new LinearLayoutManager(SearchActivity.this));
+        //GridLayoutManager gridLayoutManager = new GridLayoutManager(SearchActivity.this,2);
+        rvSearch.setLayoutManager(new GridLayoutManager(SearchActivity.this,2));
         adapter = new SearchFlowerAdapter(SearchActivity.this);
         rvSearch.setAdapter(adapter);
     }

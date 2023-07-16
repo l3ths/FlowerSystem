@@ -4,31 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity">
+    tools:context=".NotificationActivity">
 
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="362dp"
-        android:layout_height="50dp"
-        app:iconifiedByDefault="false"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/ivCart"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:padding="2dp"
-        android:src="@drawable/ic_cart_clicked"
-        app:layout_constraintBottom_toBottomOf="@+id/searchView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/searchView" />
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:weightSum="5"
-        android:paddingBottom="10dp"
         android:background="#4DFFAB40"
+        android:paddingBottom="10dp"
+        android:weightSum="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -39,9 +23,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="18dp"
-            android:src="@drawable/ic_love"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:src="@drawable/ic_love" />
 
         <ImageView
             android:id="@+id/ivOrders"
@@ -49,9 +31,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="16dp"
-            android:src="@drawable/ic_order"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:src="@drawable/ic_order" />
 
         <ImageView
             android:id="@+id/ivHome"
@@ -59,9 +39,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="13dp"
-            android:src="@drawable/ic_home_clicked"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:src="@drawable/ic_home_clicked" />
 
         <ImageView
             android:id="@+id/ivNotification"
@@ -69,9 +47,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="18dp"
-            android:src="@drawable/ic_noti"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:src="@drawable/ic_noti" />
 
         <ImageView
             android:id="@+id/ivPersonal"
@@ -79,18 +55,27 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="18dp"
-            android:src="@drawable/ic_personal"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:src="@drawable/ic_personal" />
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvSearch"
-        android:layout_width="match_parent"
-        android:layout_height="599dp"
-        android:layout_marginStart="10dp"
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Thông Báo"
+        android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/ivBack2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
 </androidx.constraintlayout.widget.ConstraintLayout>

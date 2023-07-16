@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -77,7 +78,7 @@ public class SearchFlowerAdapter extends RecyclerView.Adapter<SearchFlowerAdapte
         TextView tvSearchName;
         TextView tvSearchPrice;
         ImageView ivSearchImage;
-        ConstraintLayout clSearch;
+        CardView clSearch;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
