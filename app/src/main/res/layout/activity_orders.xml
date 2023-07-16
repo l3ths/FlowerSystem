@@ -107,7 +107,7 @@
             android:padding="10dp"
             android:text="Đã giao"
             android:textSize="15dp"
-            android:textStyle="normal" />
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/tvCanceled"
             android:layout_width="0dp"
@@ -117,13 +117,13 @@
             android:padding="10dp"
             android:text="Đã huỷ"
             android:textSize="15dp"
-            android:textStyle="normal" />
+            android:textStyle="bold" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvOrder"
         android:layout_width="match_parent"
-        android:layout_height="522dp"
+        android:layout_height="550dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
