@@ -87,18 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView19">
 
         <TextView
-            android:id="@+id/textView26"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="Chờ xác nhận"
-            android:textSize="15dp"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/textView27"
+            android:id="@+id/tvShipping"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -110,13 +99,23 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView28"
+            android:id="@+id/tvShipped"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:padding="10dp"
             android:text="Đã giao"
+            android:textSize="15dp"
+            android:textStyle="normal" />
+        <TextView
+            android:id="@+id/tvCanceled"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Đã huỷ"
             android:textSize="15dp"
             android:textStyle="normal" />
     </LinearLayout>
