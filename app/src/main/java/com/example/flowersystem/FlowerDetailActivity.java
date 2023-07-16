@@ -66,6 +66,37 @@ public class FlowerDetailActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+        tvBuyNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Retrofit retrofit = RetrofitClient.getInstance();
+                CartApi cartApi = retrofit.create(CartApi.class);
+                Call<CartDTO> call = cartApi.deleteAllCart(CUSTOMER.getId());
+                call.enqueue(new Callback<CartDTO>() {
+                    @Override
+                    public void onResponse(Call<CartDTO> call, Response<CartDTO> response) {
+                    }
+
+                    @Override
+                    public void onFailure(Call<CartDTO> call, Throwable t) {
+                    }
+                });
+                FlowerDTO flower = new FlowerDTO(flowerDTO.getId());
+                CartDTO cart = new CartDTO(flower, quantity);
+                call = cartApi.addToCart(CUSTOMER.getId(),cart);
+                call.enqueue(new Callback<CartDTO>() {
+                    @Override
+                    public void onResponse(Call<CartDTO> call, Response<CartDTO> response) {
+                    }
+
+                    @Override
+                    public void onFailure(Call<CartDTO> call, Throwable t) {
+                        Intent intent = new Intent(FlowerDetailActivity.this, ConfirmOrderActivity.class);
+                        startActivity(intent);
+                    }
+                });
+            }
+        });
 
         llAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
