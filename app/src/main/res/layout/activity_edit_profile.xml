@@ -45,7 +45,9 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="18dp"
-            android:src="@drawable/ic_love" />
+            android:src="@drawable/ic_love"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/ivOrders"
@@ -53,7 +55,9 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="16dp"
-            android:src="@drawable/ic_order_clicked" />
+            android:src="@drawable/ic_order"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/ivHome"
@@ -61,7 +65,9 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="13dp"
-            android:src="@drawable/ic_home_page" />
+            android:src="@drawable/flower"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/ivNotification"
@@ -69,7 +75,9 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="18dp"
-            android:src="@drawable/ic_noti" />
+            android:src="@drawable/ic_noti"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/ivPersonal"
@@ -77,7 +85,9 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="18dp"
-            android:src="@drawable/ic_personal" />
+            android:src="@drawable/ic_personal_clicked"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
     <LinearLayout
@@ -95,7 +105,7 @@
             android:layout_height="190dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:background="@drawable/flower"
+            android:background="@drawable/avatar"
             app:cornerRadius="50dp" />
 
         <LinearLayout
@@ -110,20 +120,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:textSize="16dp"
                 android:gravity="start"
                 android:text="Họ và tên"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
 
             <EditText
                 android:id="@+id/etName"
                 android:layout_width="0dp"
-                android:background="@drawable/shadowrow_custom"
                 android:layout_height="50dp"
-                android:paddingLeft="10dp"
                 android:layout_weight="7"
-                android:text="Lê Thanh Huy" />
+                android:background="@drawable/shadowrow_custom"
+                android:paddingLeft="10dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -134,23 +143,22 @@
             android:weightSum="10">
 
             <TextView
-                android:id="@+id/lblJoinDate"
+                android:id="@+id/lblAddress"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:textSize="16dp"
                 android:gravity="start"
-                android:text="Ngày tham gia"
+                android:text="Địa chỉ"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/tvJoinDate"
+                android:id="@+id/etAddress"
                 android:layout_width="0dp"
-                android:background="@drawable/shadowrow_custom"
                 android:layout_height="50dp"
-                android:paddingLeft="10dp"
                 android:layout_weight="7"
-                android:text="01/05/2002" />
+                android:background="@drawable/shadowrow_custom"
+                android:paddingLeft="10dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -165,19 +173,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:textSize="16dp"
                 android:gravity="start"
                 android:text="Số điện thoại"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etPhone"
                 android:layout_width="0dp"
-                android:background="@drawable/shadowrow_custom"
                 android:layout_height="50dp"
-                android:paddingLeft="10dp"
                 android:layout_weight="7"
-                android:text="0823.801.585" />
+                android:background="@drawable/shadowrow_custom"
+                android:paddingLeft="10dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -192,18 +199,17 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:textSize="16dp"
                 android:text="Email"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etEmail"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:paddingLeft="10dp"
-                android:background="@drawable/shadowrow_custom"
                 android:layout_weight="7"
-                android:text="khangdvse@fpt.edu.vn" />
+                android:background="@drawable/shadowrow_custom"
+                android:paddingLeft="10dp" />
         </LinearLayout>
 
         <Button
@@ -222,14 +228,15 @@
             android:weightSum="10">
 
             <Button
+                android:id="@+id/btnSave"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_weight="4"
                 android:background="@drawable/button_custom"
-                android:textSize="20dp"
                 android:text="THAY ĐỔI"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="20dp" />
         </LinearLayout>
 
     </LinearLayout>

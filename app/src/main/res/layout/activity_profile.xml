@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Thông tin cá nhân"
-        android:textSize="30dp"
         android:textColor="#FF9E00"
+        android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -32,8 +32,8 @@
 
     <ImageView
         android:id="@+id/ivEdit"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/tvProfile"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,9 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="18dp"
-            android:src="@drawable/ic_love" />
+            android:src="@drawable/ic_love"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/ivOrders"
@@ -65,7 +67,9 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="16dp"
-            android:src="@drawable/ic_order" />
+            android:src="@drawable/ic_order"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/ivHome"
@@ -73,7 +77,9 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="13dp"
-            android:src="@drawable/ic_home_page" />
+            android:src="@drawable/flower"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/ivNotification"
@@ -81,7 +87,9 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="18dp"
-            android:src="@drawable/ic_noti" />
+            android:src="@drawable/ic_noti"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/ivPersonal"
@@ -89,7 +97,9 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="18dp"
-            android:src="@drawable/ic_personal_clicked" />
+            android:src="@drawable/ic_personal_clicked"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
     <LinearLayout
@@ -109,14 +119,14 @@
             android:layout_margin="10dp"
             android:background="@drawable/ic_launcher_background"
             app:cornerRadius="50dp"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            app:srcCompat="@drawable/avatar" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:orientation="horizontal"
             android:background="@drawable/shadowrow_custom"
             android:gravity="center"
+            android:orientation="horizontal"
             android:paddingLeft="10dp"
             android:weightSum="10">
 
@@ -133,43 +143,41 @@
                 android:id="@+id/tvName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:text="Đặng Vỹ Khang" />
+                android:layout_weight="6" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:paddingLeft="10dp"
             android:background="@drawable/shadowrow_custom"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
             android:weightSum="10">
 
             <TextView
-                android:id="@+id/lblJoinDate"
+                android:id="@+id/lblAddress"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_weight="4"
-                android:text="Ngày tham gia"
+                android:text="Địa chỉ"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvJoinDate"
+                android:id="@+id/tvAddress"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:text="01.05.2022" />
+                android:layout_weight="6" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:paddingLeft="10dp"
             android:background="@drawable/shadowrow_custom"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
             android:weightSum="10">
 
             <TextView
@@ -185,16 +193,15 @@
                 android:id="@+id/tvPhone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:text="0823.801.585" />
+                android:layout_weight="6" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:orientation="horizontal"
             android:background="@drawable/shadowrow_custom"
             android:gravity="center"
+            android:orientation="horizontal"
             android:paddingLeft="10dp"
             android:weightSum="10">
 
@@ -211,8 +218,7 @@
                 android:id="@+id/tvEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:text="khangdvse@fpt.edu.vn" />
+                android:layout_weight="6" />
         </LinearLayout>
 
         <Button
@@ -236,22 +242,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_weight="4"
-                android:textSize="18dp"
                 android:background="@drawable/button_custom"
                 android:text="ĐỔI MẬT KHẨU"
                 android:textColor="@color/white"
-                 />
+                android:textSize="18dp" />
 
             <Button
+                android:id="@+id/btnLogout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_weight="4"
                 android:background="@drawable/button_custom"
-                android:textColor="@color/white"
                 android:text="ĐĂNG XUẤT"
-                android:textSize="18dp"
-                />
+                android:textColor="@color/white"
+                android:textSize="18dp" />
         </LinearLayout>
 
     </LinearLayout>
