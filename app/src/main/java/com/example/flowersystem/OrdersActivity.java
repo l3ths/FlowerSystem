@@ -83,7 +83,8 @@ public class OrdersActivity extends AppCompatActivity {
         tvShipping.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvShipping.setBackgroundColor(getResources().getColor(R.color.ligt_orange));
+               // tvShipping.setBackgroundColor(getResources().getColor(R.color.ligt_orange));
+                tvShipping.setBackgroundResource(R.drawable.button_choose_shadow);
                 tvShipped.setBackgroundColor(Color.WHITE);
                 tvCanceled.setBackgroundColor(Color.WHITE);
                 STATUS = Constants.OrderStatusNumber.CREATED;
@@ -93,7 +94,8 @@ public class OrdersActivity extends AppCompatActivity {
         tvShipped.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvShipped.setBackgroundColor(getResources().getColor(R.color.ligt_orange));
+                //tvShipped.setBackgroundColor(getResources().getColor(R.color.ligt_orange));
+                tvShipped.setBackgroundResource(R.drawable.button_choose_shadow);
                 tvShipping.setBackgroundColor(Color.WHITE);
                 tvCanceled.setBackgroundColor(Color.WHITE);
                 STATUS = Constants.OrderStatusNumber.SHIPPED;
@@ -103,7 +105,8 @@ public class OrdersActivity extends AppCompatActivity {
         tvCanceled.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvCanceled.setBackgroundColor(getResources().getColor(R.color.ligt_orange));
+                //tvCanceled.setBackgroundColor(getResources().getColor(R.color.ligt_orange));
+                tvCanceled.setBackgroundResource(R.drawable.button_choose_shadow);
                 tvShipped.setBackgroundColor(Color.WHITE);
                 tvShipping.setBackgroundColor(Color.WHITE);
                 STATUS = Constants.OrderStatusNumber.CANCELLED;
