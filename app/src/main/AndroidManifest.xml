@@ -44,10 +44,10 @@
             android:value="AIzaSyBrFAixXoJt3qtR0iSx-hSYb-Qrbt3SaDM" />
 
         <activity
-            android:name=".dto.EditProfileActivity"
+            android:name=".EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".dto.ProfileActivity"
+            android:name=".ProfileActivity"
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".TestApiToken" -->
         <!-- android:exported="false" /> -->
