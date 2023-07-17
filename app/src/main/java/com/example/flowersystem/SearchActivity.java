@@ -10,15 +10,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.example.flowersystem.api.FlowerApi;
 import com.example.flowersystem.api.RetrofitClient;
 import com.example.flowersystem.dto.Flower;
 import com.example.flowersystem.dto.FlowerDTO;
-import com.example.flowersystem.dto.ProfileActivity;
+import com.example.flowersystem.ProfileActivity;
 import com.example.flowersystem.dto.SearchFlowerAdapter;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,26 +106,8 @@ public class SearchActivity extends AppCompatActivity {
         }
     }
     public void goToDetail(Long id){
-        Retrofit retrofit = RetrofitClient.getInstance();
-        FlowerApi flowerApi = retrofit.create(FlowerApi.class);
-        try {
-            Call<FlowerDTO> call = flowerApi.getFlower(id);
-            call.enqueue(new Callback<FlowerDTO>() {
-                @Override
-                public void onResponse(Call<FlowerDTO> call, Response<FlowerDTO> response) {
-                    Intent intent = new Intent(SearchActivity.this, FlowerDetailActivity.class);
-                    intent.putExtra("flowerDetail",(Serializable) response.body());
-                    startActivity(intent);
-                }
-
-                @Override
-                public void onFailure(Call<FlowerDTO> call, Throwable t) {
-
-                }
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        Intent intent = new Intent(SearchActivity.this, FlowerDetailActivity.class);
+        intent.putExtra("flowerDetailID",id);
+        startActivity(intent);
     }
 }
