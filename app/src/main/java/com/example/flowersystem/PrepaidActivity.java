@@ -103,7 +103,8 @@ public class PrepaidActivity extends AppCompatActivity {
         String vnp_IpAddr = ip;
         String vnp_TmnCode = "P76OC4T0";
 
-        int amount = 10000000;
+        int amount = (int) orderDTO.getTotal();
+        amount*=100;
         Map<String, String> vnp_Params = new HashMap<>();
         vnp_Params.put("vnp_Version", vnp_Version);
         vnp_Params.put("vnp_Command", vnp_Command);
