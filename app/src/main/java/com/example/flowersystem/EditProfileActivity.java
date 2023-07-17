@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -58,9 +59,15 @@ public class EditProfileActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateProfile();
-                Intent intent = new Intent(EditProfileActivity.this, ProfileActivity.class);
-                startActivity(intent);
+                if (checkEditTextEmpty(etName) || checkEditTextEmpty(etAddress) || checkEditTextEmpty(etEmail)) {
+                    Toast.makeText(EditProfileActivity.this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+                } else if (!checkValidEmail(etEmail.getText().toString().trim())) {
+                    Toast.makeText(EditProfileActivity.this, "Email không hợp lệ!", Toast.LENGTH_SHORT).show();
+                } else {
+                    updateProfile();
+                    Intent intent = new Intent(EditProfileActivity.this, ProfileActivity.class);
+                    startActivity(intent);
+                }
             }
         });
         ivOrders.setOnClickListener(new View.OnClickListener() {
@@ -143,5 +150,13 @@ public class EditProfileActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+
+    private boolean checkEditTextEmpty(EditText editText) {
+        return editText.getText().toString().trim().isEmpty();
+    }
+
+    private boolean checkValidEmail(CharSequence email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 }

@@ -51,6 +51,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         holder.tvTotal.setText(orderFlower.getOrderDTO().getTotal() + "");
         if (!TextUtils.equals(orderFlower.getOrderDTO().getOrderStatus(),Constants.OrderStatusNumber.CREATED))
             holder.ivCancel.setVisibility(View.INVISIBLE);
+        else holder.ivCancel.setVisibility(View.VISIBLE);
         if (TextUtils.equals(orderFlower.getOrderDTO().getPaymentMethod(), "COD")) {
             holder.tvMethod.setText("Thanh toán khi nhận hàng");
         } else {
