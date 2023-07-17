@@ -25,7 +25,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.example.flowersystem.custom_textview.LobsterTextView
+        <com.example.flowersystem.custom_textview.CarenyTextView
             android:id="@+id/tvSearchName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
             android:text="550000"
             android:gravity="center"
             android:textColor="#6F473E"

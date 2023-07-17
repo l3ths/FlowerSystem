@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFE8D8"
     tools:context=".OrdersActivity">
 
-    <TextView
+    <com.example.flowersystem.custom_textview.CarenyTextView
         android:id="@+id/tvProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Thông tin cá nhân"
-        android:textColor="#FF9E00"
-        android:textSize="30dp"
+        android:textColor="#CF7B00"        android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -111,19 +111,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProfile">
 
-        <ImageView
-            android:id="@+id/ivAvatar"
+        <androidx.cardview.widget.CardView
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:background="@drawable/ic_launcher_background"
-            app:cornerRadius="50dp"
-            app:srcCompat="@drawable/avatar" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="1000dp">
 
+            <ImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:background="@drawable/ic_launcher_background"
+                app:cornerRadius="50dp"
+                app:srcCompat="@drawable/avatar" />
+        </androidx.cardview.widget.CardView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#F9F9F9">
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="55dp"
             android:background="@drawable/shadowrow_custom"
             android:gravity="center"
             android:orientation="horizontal"
@@ -134,21 +146,26 @@
                 android:id="@+id/lblName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="4"
+                android:layout_marginStart="15dp"
+                android:layout_weight="3"
+                android:textSize="18dp"
                 android:text="Họ và tên"
+                android:textColor="#000000"
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="18dp"
                 android:id="@+id/tvName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="6" />
+                android:layout_weight="7" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="55dp"
             android:background="@drawable/shadowrow_custom"
             android:gravity="center"
             android:orientation="horizontal"
@@ -159,21 +176,26 @@
                 android:id="@+id/lblAddress"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="4"
+                android:layout_marginStart="15dp"
+                android:layout_weight="3"
                 android:text="Địa chỉ"
+                android:textColor="#000000"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="18dp"
                 android:id="@+id/tvAddress"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="6" />
+                android:layout_weight="7" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="55dp"
             android:background="@drawable/shadowrow_custom"
             android:gravity="center"
             android:orientation="horizontal"
@@ -184,21 +206,26 @@
                 android:id="@+id/lblPhone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="4"
+                android:layout_marginStart="15dp"
+                android:layout_weight="3"
+                android:textColor="#000000"
+                android:textSize="18dp"
                 android:text="Số điện thoại"
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="18dp"
                 android:id="@+id/tvPhone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="6" />
+                android:layout_weight="7" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="55dp"
             android:background="@drawable/shadowrow_custom"
             android:gravity="center"
             android:orientation="horizontal"
@@ -209,22 +236,31 @@
                 android:id="@+id/lblEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="4"
+                android:layout_marginStart="15dp"
+                android:layout_weight="3"
                 android:text="Email"
+                android:textSize="18dp"
+                android:textColor="#000000"
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="18dp"
                 android:id="@+id/tvEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="6" />
+                android:layout_weight="7" />
         </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#F9F9F9">
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
             android:background="@drawable/button_nonesolid"
             android:hint="Tài khoản liên kết"
             android:textStyle="italic" />

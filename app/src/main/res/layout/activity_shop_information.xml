@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="10dp"
     android:orientation="vertical"
-    android:background="#FFDAC1"
+    android:background="#FFE8D8"
     tools:context=".ShopInformationActivity">
 
     <androidx.cardview.widget.CardView

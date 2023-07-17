@@ -8,6 +8,7 @@ public class Utils {
     private static Typeface greatvibesTF;
     private static Typeface quicksandTF;
     private static Typeface lobsterTF;
+    private static Typeface carenyTF;
 
     public static Typeface getAlluraTF(Context context) {
         if (alluraTF == null) {
@@ -35,5 +36,11 @@ public class Utils {
             lobsterTF = Typeface.createFromAsset(context.getAssets(), "fonts/LobsterTwo-BoldItalic.otf");
         }
         return lobsterTF;
+    }
+    public static Typeface getCarenyTF(Context context) {
+        if (carenyTF == null) {
+            carenyTF = Typeface.createFromAsset(context.getAssets(), "fonts/CarenyRegular-GO27Z.otf");
+        }
+        return carenyTF;
     }
 }

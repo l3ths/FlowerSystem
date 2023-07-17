@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFE8D8"
     tools:context=".OrdersActivity">
 
-    <TextView
+    <com.example.flowersystem.custom_textview.CarenyTextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Đơn hàng"
-        android:textSize="30dp"
-        android:textColor="#FF9E00"
+        android:text="Order"
+        android:textSize="40dp"
+        android:textColor="#CF7B00"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -83,15 +84,20 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19">
 
+        <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <TextView
             android:id="@+id/tvShipping"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@drawable/button_choose_shadow"
             android:gravity="center"
@@ -103,26 +109,31 @@
         <TextView
             android:id="@+id/tvShipped"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:gravity="center"
             android:padding="10dp"
+            android:background="@color/white"
             android:text="Đã giao"
             android:textSize="15dp"
             android:textStyle="bold" />
         <TextView
             android:id="@+id/tvCanceled"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:gravity="center"
+            android:background="@color/white"
             android:padding="10dp"
             android:text="Đã huỷ"
             android:textSize="15dp"
             android:textStyle="bold" />
+
+    </LinearLayout>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
         android:id="@+id/rvOrder"
         android:layout_width="match_parent"
         android:layout_height="550dp"
