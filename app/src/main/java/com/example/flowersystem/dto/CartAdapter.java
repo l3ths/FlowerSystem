@@ -61,8 +61,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                         .setTitle("Xoá khỏi giỏ hàng.")
                         .setMessage("Xoá " + flowerDTO.getFlowerName() + " khỏi giỏ hàng?")
 
-                        // Specifying a listener allows you to take an action before dismissing the dialog.
-                        // The dialog is automatically dismissed when a dialog button is clicked.
                         .setPositiveButton("XOÁ", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 Retrofit retrofit = RetrofitClient.getInstance();

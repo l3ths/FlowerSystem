@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -20,6 +22,7 @@ import com.example.flowersystem.api.RetrofitClient;
 import com.example.flowersystem.dto.CartAdapter;
 import com.example.flowersystem.dto.CartDTO;
 import com.example.flowersystem.dto.CustomerDTO;
+import com.example.flowersystem.dto.MessageDTO;
 import com.example.flowersystem.dto.OrderAdapter;
 import com.example.flowersystem.dto.OrderDTO;
 import com.example.flowersystem.dto.OrderFlower;
@@ -147,5 +150,41 @@ public class OrdersActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public void cancelOrder(OrderFlower orderFlower){
+        new AlertDialog.Builder(OrdersActivity.this)
+                .setTitle("Huỷ đơn hàng")
+                .setMessage("Huỷ đơn " + orderFlower.getOrderDTO().getId() + " ?")
+
+                .setPositiveButton("XÁC NHẬN", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Retrofit retrofit = RetrofitClient.getInstance();
+                        OrderApi orderApi = retrofit.create(OrderApi.class);
+                        OrderDTO dto = new OrderDTO();
+                        dto.setOrderStatus(Constants.OrderStatusNumber.CANCELLED);
+                        Call<MessageDTO> call = orderApi.updateOrderStatus(orderFlower.getOrderDTO().getId(), dto);
+                        call.enqueue(new Callback<MessageDTO>() {
+                            @Override
+                            public void onResponse(Call<MessageDTO> call, Response<MessageDTO> response) {
+                            }
+
+                            @Override
+                            public void onFailure(Call<MessageDTO> call, Throwable t) {
+                                adapter.notifyDataSetChanged();
+                                onResume();
+                                Toast.makeText(OrdersActivity.this, "Huỷ thành công!", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                })
+
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton("HUỶ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 }

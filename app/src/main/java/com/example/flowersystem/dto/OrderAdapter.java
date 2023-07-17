@@ -1,11 +1,14 @@
 package com.example.flowersystem.dto;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,8 +17,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.flowersystem.Constants;
 import com.example.flowersystem.OrdersActivity;
 import com.example.flowersystem.R;
+import com.example.flowersystem.api.CartApi;
+import com.example.flowersystem.api.OrderApi;
+import com.example.flowersystem.api.RetrofitClient;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> {
     OrdersActivity context;
@@ -38,7 +49,9 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         holder.tvId.setText(orderFlower.getOrderDTO().getId() + "");
         holder.tvAddress.setText(Constants.LOGGED_IN_CUSTOMER.getAddress());
         holder.tvTotal.setText(orderFlower.getOrderDTO().getTotal() + "");
-        if (TextUtils.equals(orderFlower.getOrderDTO().getPaymentMethod(),"COD")) {
+        if (!TextUtils.equals(orderFlower.getOrderDTO().getOrderStatus(),Constants.OrderStatusNumber.CREATED))
+            holder.ivCancel.setVisibility(View.INVISIBLE);
+        if (TextUtils.equals(orderFlower.getOrderDTO().getPaymentMethod(), "COD")) {
             holder.tvMethod.setText("Thanh toán khi nhận hàng");
         } else {
             holder.tvMethod.setText("Thanh toán trực tuyến");
@@ -50,18 +63,18 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         holder.ivCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //cancel order
+                context.cancelOrder(orderFlower);
             }
         });
-
     }
 
     @Override
     public int getItemCount() {
-        if (orderFlowerList==null)
-        return 0;
+        if (orderFlowerList == null)
+            return 0;
         return orderFlowerList.size();
     }
+
     public void setTasks(List<OrderFlower> list) {
         orderFlowerList = list;
         notifyDataSetChanged();
