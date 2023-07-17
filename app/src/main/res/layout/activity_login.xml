@@ -6,23 +6,28 @@
     android:layout_height="match_parent"
     android:background="#FFDAC1"
     tools:context=".LoginActivity">
+
     <View
-        android:layout_width="350dp"
-        android:layout_height="598dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="72dp"
+        android:id="@+id/view2"
+        android:layout_width="360dp"
+        android:layout_height="650dp"
         android:background="#80FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
     <EditText
         android:id="@+id/etPhone"
         android:layout_width="330dp"
         android:layout_height="45dp"
         android:layout_marginTop="2dp"
         android:background="@drawable/botron_edittext"
+        android:inputType="phone"
         android:paddingLeft="10dp"
         android:text="0909456789"
-        android:inputType="phone"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -33,25 +38,25 @@
         android:layout_height="45dp"
         android:layout_marginTop="2dp"
         android:background="@drawable/botron_edittext"
-        android:paddingLeft="10dp"
         android:ems="10"
-        android:text="123"
         android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:text="123"
         app:layout_constraintEnd_toEndOf="@+id/etPhone"
         app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
         android:background="@drawable/button_custom"
-        android:textColor="@color/white"
-        android:textSize="18dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:text="ĐĂNG NHẬP"
+        android:textColor="@color/white"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="@+id/etPassword"
         app:layout_constraintStart_toStartOf="@+id/etPassword"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
@@ -85,23 +90,23 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <!--    <TextView-->
-<!--        android:id="@+id/textView2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="108dp"-->
-<!--        android:text="Đăng nhập"-->
-<!--        android:textSize="30dp"-->
-<!--        android:textStyle="bold"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.498"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <!--        android:id="@+id/textView2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="108dp"-->
+    <!--        android:text="Đăng nhập"-->
+    <!--        android:textSize="30dp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.498"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
         android:id="@+id/tvForgotPasswordRedirect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:text="Quên mật khẩu?"
         android:textColor="#FF5722"
         android:textSize="15dp"
@@ -113,24 +118,25 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:text="LOG IN"
+        android:layout_marginTop="25dp"
+        android:text="FLOWER SHOP"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="@+id/view2">
 
     </com.example.flowersystem.custom_textview.QuicksandRegularTextView>
+
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="Số điện thoại"
-        android:textSize="16dp"
         android:textColor="@color/black"
+        android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/etPhone"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -140,8 +146,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:textColor="@color/black"
         android:text="Mật khẩu"
+        android:textColor="@color/black"
         android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/etPhone"
