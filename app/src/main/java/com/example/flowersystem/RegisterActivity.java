@@ -182,7 +182,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if (jwtTokenDTO.getToken() == null || jwtTokenDTO.getToken().isEmpty()) {
                     } else {
                         JwtTokenManager.JWT_TOKEN = jwtTokenDTO.getToken();
-                        Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+                        Intent intent = new Intent(RegisterActivity.this, SearchActivity.class);
                         startActivity(intent);
                         finish();
                     }
