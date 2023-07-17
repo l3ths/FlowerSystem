@@ -76,6 +76,18 @@ public class PrepaidActivity extends AppCompatActivity {
 
                 //action == SuccessBackAction
                 //thanh toán thành công trên webview
+                if (action == "SuccessBackAction") {
+                    Intent cartIntent = new Intent(PrepaidActivity.this, CartActivity.class);
+                    cartIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(cartIntent);
+                    finish();
+                } else if (action == "AppBackAction") {
+                    Intent cartIntent = new Intent(PrepaidActivity.this, CartActivity.class);
+                    cartIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(cartIntent);
+                    finish();
+                }
+
             }
         });
         startActivity(intent);
@@ -104,7 +116,7 @@ public class PrepaidActivity extends AppCompatActivity {
         String vnp_TmnCode = "P76OC4T0";
 
         int amount = (int) orderDTO.getTotal();
-        amount*=100;
+        amount *= 100;
         Map<String, String> vnp_Params = new HashMap<>();
         vnp_Params.put("vnp_Version", vnp_Version);
         vnp_Params.put("vnp_Command", vnp_Command);
