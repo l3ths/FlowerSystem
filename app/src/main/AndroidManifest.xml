@@ -4,9 +4,13 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission
+        android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <application
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
+        android:enableOnBackInvokedCallback="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlowerSystem"
         tools:targetApi="31" >
+        <activity
+            android:name=".PrepaidActivity"
+            android:exported="false" />
         <activity
             android:name=".NotificationActivity"
             android:exported="false" />
@@ -37,10 +44,10 @@
             android:value="AIzaSyBrFAixXoJt3qtR0iSx-hSYb-Qrbt3SaDM" />
 
         <activity
-            android:name=".EditProfileActivity"
+            android:name=".dto.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".dto.ProfileActivity"
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".TestApiToken" -->
         <!-- android:exported="false" /> -->
@@ -107,7 +114,23 @@
         -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/white" />
+            android:resource="@color/white" /> <!-- VNPAY -->
+        <!--
+Acvitiy d? trigger k?t qu? thanh to�n t? app mobile banking
+ khi m? l?i activity n�y th� b?n c?n ki?m tra tr?ng th�i thanh to�n c?a don h�ng
+        -->
+        <activity
+            android:name=".PaymentResultActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="paymentresult" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
