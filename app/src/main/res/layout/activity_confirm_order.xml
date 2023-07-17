@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0.0"
-        android:textColor="#FF0000"
+        android:textColor="#FF9E00"
         android:textSize="22dp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/textView45"
@@ -34,10 +34,12 @@
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="Xác nhận đơn hàng"
-        android:textSize="28dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#FF9E00"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,6 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -98,7 +101,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="18dp"
-            android:src="@drawable/ic_personal"/>
+            android:src="@drawable/ic_personal" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -171,8 +174,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
         android:background="#3DD9D9D9"
         android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -201,8 +204,8 @@
             <RadioButton
                 android:id="@+id/rbPostPaid"
                 android:layout_width="match_parent"
-                android:checked="true"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 android:text="Thanh toán khi nhận hàng" />
 
             <RadioButton
@@ -212,25 +215,26 @@
                 android:text="Thanh toán trực tuyến (VNPAY)" />
         </RadioGroup>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <Button
         android:id="@+id/btnConfirmOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_custom"
-        android:textColor="@color/white"
-        android:text="Xác nhận"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp"
-        android:textSize="18dp"
         android:layout_margin="10dp"
+        android:background="@drawable/button_custom"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Xác nhận"
+        android:textColor="@color/white"
+        android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvConfirmOrder"
         android:layout_width="match_parent"
-        android:layout_margin="20dp"
         android:layout_height="200dp"
+        android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout11" />
@@ -240,7 +244,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" Đ"
-        android:textColor="#FF0000"
+        android:textColor="#FF9E00"
         android:textSize="22dp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/tvConfirmTotal"

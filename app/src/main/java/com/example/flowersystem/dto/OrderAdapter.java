@@ -8,11 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.flowersystem.ConfirmOrderActivity;
 import com.example.flowersystem.Constants;
 import com.example.flowersystem.OrdersActivity;
 import com.example.flowersystem.R;
@@ -47,9 +45,14 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         }
         OrderDetailAdapter adapter = new OrderDetailAdapter(context);
         adapter.setTasks(orderFlower.getList());
-
         holder.rvFlower.setLayoutManager(new LinearLayoutManager(context));
         holder.rvFlower.setAdapter(adapter);
+        holder.ivCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //cancel order
+            }
+        });
 
     }
 
@@ -74,6 +77,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         TextView tvTotal;
         TextView tvMethod;
         RecyclerView rvFlower;
+        ImageView ivCancel;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -82,6 +86,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
             tvTotal = itemView.findViewById(R.id.tvTotalOrderPrice);
             tvMethod = itemView.findViewById(R.id.tvOrderMethod);
             rvFlower = itemView.findViewById(R.id.rvOrderFlower);
+            ivCancel = itemView.findViewById(R.id.ivCancel);
         }
     }
 }
