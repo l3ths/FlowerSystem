@@ -21,8 +21,8 @@ import javax.crypto.spec.SecretKeySpec;
 public class Config {
 
     public static String vnp_PayUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-//    public static String vnp_Returnurl = "https://prm-flowershop.azurewebsites.net/v1/vnpay-payment-client";
-    public static String vnp_Returnurl = "http://10.0.2.2:8080/v1/vnpay-payment-client";
+    public static String vnp_Returnurl = "https://prm-flowershop.azurewebsites.net/v1/vnpay-payment-client";
+//    public static String vnp_Returnurl = "http://10.0.2.2:8080/v1/vnpay-payment-client";
     public static String vnp_TmnCode = "P76OC4T0";
     public static String vnp_HashSecret = "VZTNGXMHRLULHHTDVYOEFGUGAADJUVVY";
     public static String vnp_apiUrl = "https://sandbox.vnpayment.vn/merchant_webapi/api/transaction";
