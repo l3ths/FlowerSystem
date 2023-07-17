@@ -181,7 +181,8 @@ public class RegisterActivity extends AppCompatActivity {
                     JwtTokenDTO jwtTokenDTO = response.body();
                     if (jwtTokenDTO.getToken() == null || jwtTokenDTO.getToken().isEmpty()) {
                     } else {
-                        JwtTokenManager.JWT_TOKEN = jwtTokenDTO.getToken();
+                        JwtTokenManager.JWT_TOKEN = "Bearer " + jwtTokenDTO.getToken();
+                        Constants.LOGGED_IN_CUSTOMER = jwtTokenDTO.getCustomer();
                         Intent intent = new Intent(RegisterActivity.this, SearchActivity.class);
                         startActivity(intent);
                         finish();
