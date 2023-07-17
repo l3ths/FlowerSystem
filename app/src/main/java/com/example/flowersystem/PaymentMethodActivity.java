@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 
+import com.example.flowersystem.dto.OrderDTO;
+
 public class PaymentMethodActivity extends AppCompatActivity {
     Button btnPay;
     RadioButton rbNCB;
@@ -16,6 +18,8 @@ public class PaymentMethodActivity extends AppCompatActivity {
     ImageView ivOrders;
     ImageView ivHome;
     ImageView ivNotification;
+    OrderDTO orderDTO;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,5 +58,20 @@ public class PaymentMethodActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        orderDTO = (OrderDTO) getIntent().getSerializableExtra("ORDER_DTO");
+        if (orderDTO != null) {
+            btnPay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    paymentAction(orderDTO);
+                }
+            });
+        }
+    }
+
+    private void paymentAction(OrderDTO orderDTO) {
+        Intent intent =new Intent(this, PrepaidActivity.class);
+        intent.putExtra("ORDER_DTO", orderDTO);
+        startActivity(intent);
     }
 }

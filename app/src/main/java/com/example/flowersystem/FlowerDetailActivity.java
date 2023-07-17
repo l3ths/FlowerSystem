@@ -88,7 +88,7 @@ public class FlowerDetailActivity extends AppCompatActivity {
                 });
                 FlowerDTO flower = new FlowerDTO(flowerDTO.getId());
                 CartDTO cart = new CartDTO(flower, quantity);
-                call = cartApi.addToCart(CUSTOMER.getId(),cart);
+                call = cartApi.addToCart(CUSTOMER.getId(), cart);
                 call.enqueue(new Callback<CartDTO>() {
                     @Override
                     public void onResponse(Call<CartDTO> call, Response<CartDTO> response) {
@@ -115,14 +115,14 @@ public class FlowerDetailActivity extends AppCompatActivity {
                     call.enqueue(new Callback() {
                         @Override
                         public void onResponse(Call call, Response response) {
-                            Toast.makeText(FlowerDetailActivity.this, "Đã thêm vào giỏ hàng!"+response.code(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(FlowerDetailActivity.this, "Đã thêm vào giỏ hàng!" + response.code(), Toast.LENGTH_SHORT).show();
 
                         }
 
                         @Override
                         public void onFailure(Call call, Throwable t) {
                             Toast.makeText(FlowerDetailActivity.this, "Đã thêm vào giỏ hàng!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(FlowerDetailActivity.this,SearchActivity.class);
+                            Intent intent = new Intent(FlowerDetailActivity.this, SearchActivity.class);
                             startActivity(intent);
                         }
                     });
@@ -196,33 +196,17 @@ public class FlowerDetailActivity extends AppCompatActivity {
     public void getData() {
         Intent intent = getIntent();
         if (intent != null) {
-            long id = intent.getLongExtra("flowerDetailID", 113);
-            Retrofit retrofit = RetrofitClient.getInstance();
-            FlowerApi flowerApi = retrofit.create(FlowerApi.class);
-            try {
-                Call<FlowerDTO> call = flowerApi.getFlower(id);
-                call.enqueue(new Callback<FlowerDTO>() {
-                    @Override
-                    public void onResponse(Call<FlowerDTO> call, Response<FlowerDTO> response) {
-                        flowerDTO = response.body();
-                        tvName.setText(flowerDTO.getFlowerName());
-                        tvPrice.setText(flowerDTO.getUnitPrice() + "");
-                        tvDetails.setText(flowerDTO.getFlowerDescription());
-                        Glide.with(FlowerDetailActivity.this)
-                                .load(flowerDTO.getImage())
-                                .centerCrop()
-                                .into(ivImage);
-                        maxQuantity = flowerDTO.getStock();
-                    }
+//            long id = intent.getLongExtra("flowerDetail", 113);
+            flowerDTO = (FlowerDTO) intent.getSerializableExtra("flowerDetail");
+            tvName.setText(flowerDTO.getFlowerName());
+            tvPrice.setText(flowerDTO.getUnitPrice() + "");
+            tvDetails.setText(flowerDTO.getFlowerDescription());
+            Glide.with(FlowerDetailActivity.this)
+                    .load(flowerDTO.getImage())
+                    .centerCrop()
+                    .into(ivImage);
+            maxQuantity = flowerDTO.getStock();
 
-                    @Override
-                    public void onFailure(Call<FlowerDTO> call, Throwable t) {
-
-                    }
-                });
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
     }
 }
