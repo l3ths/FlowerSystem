@@ -163,7 +163,12 @@ public class LoginActivity extends AppCompatActivity {
                         } else {
                             JwtTokenManager.JWT_TOKEN = "Bearer " + jwtTokenDTO.getToken();
                             Constants.LOGGED_IN_CUSTOMER = jwtTokenDTO.getCustomer();
-                            Intent intent = new Intent(LoginActivity.this, SearchActivity.class);
+                            Intent intent;
+                            if (Constants.LOGGED_IN_CUSTOMER.getRole() != null) {
+                                intent = new Intent(LoginActivity.this, OrderManagerActivity.class);
+                            } else {
+                                intent = new Intent(LoginActivity.this, SearchActivity.class);
+                            }
                             startActivity(intent);
                             sendFirebaseNotificationToServer();
                         }

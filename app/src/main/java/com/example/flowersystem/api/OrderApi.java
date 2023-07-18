@@ -24,4 +24,6 @@ public interface OrderApi {
     public Call<OrderDTO> createPrepaidOrder(@Path("customerId") Long customerId, @Body OrderDTO orderDTO);
     @PUT("/v1/v1/orders/{orderId}/order-status")
     public Call<MessageDTO> updateOrderStatus(@Path("orderId") long orderId,@Body OrderDTO orderDTO);
+    @GET("/v1/orders/order-status/{statusNumber}")
+    public Call<List<OrderDTO>> getAllOrdersByStatus(@Path("statusNumber") String statusNumber);
 }

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SendNotificationActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".NotificationActivity">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#4DFFAB40"
+            android:paddingBottom="10dp"
+            android:weightSum="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/ivLove"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:padding="18dp"
+                android:src="@drawable/ic_love" />
+
+            <ImageView
+                android:id="@+id/ivOrders"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:padding="16dp"
+                android:src="@drawable/ic_order" />
+
+            <ImageView
+                android:id="@+id/ivNotification"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:padding="18dp"
+                android:src="@drawable/ic_noti_clicked" />
+
+            <ImageView
+                android:id="@+id/ivPersonal"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:padding="18dp"
+                android:src="@drawable/ic_personal" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Gửi thông báo"
+            android:textColor="#FF9E00"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.524"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivBack2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+        <EditText
+            android:id="@+id/etNotiTitle"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:ems="10"
+            android:hint="Vui lòng nhập tiêu đề"
+            android:inputType="text"
+            android:textColorHint="#AAAAAA"
+            app:layout_constraintEnd_toEndOf="@+id/textView21"
+            app:layout_constraintStart_toStartOf="@+id/textView21"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+        <EditText
+            android:id="@+id/etNotiBody"
+            android:layout_width="350dp"
+            android:layout_height="130dp"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="Vui lòng nhập nội dung"
+            android:layout_marginTop="10dp"
+            android:textColorHint="#AAAAAA"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="@+id/textView16"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tiêu đề thông báo:"
+            android:layout_marginBottom="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/etNotiTitle"
+            app:layout_constraintStart_toStartOf="@+id/etNotiTitle" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nội dung:"
+            android:textSize="20dp"
+            android:layout_marginTop="50dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/etNotiTitle"
+            app:layout_constraintTop_toBottomOf="@+id/etNotiTitle" />
+
+        <Button
+            android:id="@+id/btnSendNoti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gởi Thông báo"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="@+id/etNotiBody"
+            app:layout_constraintStart_toStartOf="@+id/etNotiBody"
+            app:layout_constraintTop_toBottomOf="@+id/etNotiBody" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
