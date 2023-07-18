@@ -111,4 +111,55 @@
             android:indeterminate="true" />
     </RelativeLayout>
 </LinearLayout>
+    <LinearLayout
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="#4DFFAB40"
+    android:paddingBottom="10dp"
+    android:weightSum="5"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <ImageView
+        android:id="@+id/ivLove"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        android:padding="20dp"
+        android:src="@drawable/map_pointer" />
+
+    <ImageView
+        android:id="@+id/ivOrders"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        android:padding="16dp"
+        android:src="@drawable/ic_order" />
+
+    <ImageView
+        android:id="@+id/ivHome"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        android:padding="13dp"
+        android:src="@drawable/ic_home_clicked" />
+
+    <ImageView
+        android:id="@+id/ivNotification"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        android:padding="18dp"
+        android:src="@drawable/ic_noti" />
+
+    <ImageView
+        android:id="@+id/ivPersonal"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        android:padding="18dp"
+        android:src="@drawable/ic_personal" />
+</LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
