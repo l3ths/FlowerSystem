@@ -22,6 +22,8 @@ import com.example.flowersystem.dto.CustomerDTO;
 import com.example.flowersystem.dto.JwtTokenDTO;
 import com.example.flowersystem.dto.LoginInforDTO;
 
+import java.util.regex.Pattern;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -40,9 +42,12 @@ public class RegisterActivity extends AppCompatActivity {
     private final String REQUIRED_FIELD = "Bắt buộc";
     private final String PHONE_HAS_BEEN_USED = "Số điện thoại đã được sử dụng";
     private final String PASSWORD_MUST_MATCH = "Xác nhận mật khẩu không đúng";
+    private final String INVALID_EMAIL = "Email không hợp lệ";
+    private final String INVALID_PHONE = "Số điện thoại không hợp lệ";
     private RelativeLayout relativeLayoutLoading;
     private final int HTTP_DUPLICATED_CODE = 409;
     private final int HTTP_CREATED_CODE = 201;
+    private Pattern pattern;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,21 +86,31 @@ public class RegisterActivity extends AppCompatActivity {
         etPassword.clearFocus();
         etConfirmPassword.clearFocus();
         etEmail.clearFocus();
+        String name = etName.getText().toString();
+        String address = etAddress.getText().toString();
+        String email = etEmail.getText().toString();
         String phone = etPhone.getText().toString().trim();
         String password = etPassword.getText().toString();
         String confirmPassword = etConfirmPassword.getText().toString();
-        if (TextUtils.isEmpty(phone)) {
+        if (TextUtils.isEmpty(name)) {
+            etName.setError(REQUIRED_FIELD);
+        } else if (TextUtils.isEmpty(email)) {
+            etEmail.setError(REQUIRED_FIELD);
+        } else if (!checkValidEmail(email)) {
+            etEmail.setError(INVALID_EMAIL);
+        } else if (TextUtils.isEmpty(phone)) {
             etPhone.setError(REQUIRED_FIELD);
+        } else if (!checkValidPhoneNumber(phone)) {
+            etPhone.setError(INVALID_PHONE);
         } else if (TextUtils.isEmpty(password)) {
             etPassword.setError(REQUIRED_FIELD);
         } else if (TextUtils.isEmpty(confirmPassword)) {
             etConfirmPassword.setError(REQUIRED_FIELD);
         } else if (!TextUtils.equals(password, confirmPassword)) {
             etConfirmPassword.setError(PASSWORD_MUST_MATCH);
+        } else if (TextUtils.isEmpty(address)) {
+            etAddress.setError(REQUIRED_FIELD);
         } else {
-            String name = etName.getText().toString();
-            String address = etAddress.getText().toString();
-            String email = etEmail.getText().toString();
             CustomerDTO customerDTO = new CustomerDTO();
             customerDTO.setCustomerName(name);
             customerDTO.setAddress(address);
@@ -203,5 +218,14 @@ public class RegisterActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    private boolean checkValidEmail(CharSequence email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    private boolean checkValidPhoneNumber(String phone) {
+        pattern = Pattern.compile("^0\\d{9}$");
+        return pattern.matcher(phone).matches();
     }
 }
