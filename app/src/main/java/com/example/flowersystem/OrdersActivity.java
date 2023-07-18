@@ -42,7 +42,7 @@ public class OrdersActivity extends AppCompatActivity {
     TextView tvShipping;
     TextView tvShipped;
     TextView tvCanceled;
-    ImageView ivBack;
+    ImageView ivBack,ivShopLoca;
     String STATUS = Constants.OrderStatusNumber.CREATED;
     ImageView ivHome;
     ImageView ivNotification;
@@ -56,6 +56,7 @@ public class OrdersActivity extends AppCompatActivity {
         tvCanceled = findViewById(R.id.tvCanceled);
         ivBack = findViewById(R.id.ivBack);
         ivHome = findViewById(R.id.ivHome);
+
         ivNotification = findViewById(R.id.ivNotification);
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +64,14 @@ public class OrdersActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
+        ivShopLoca = findViewById(R.id.ivLove);
+        ivShopLoca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OrdersActivity.this, ShopInformationActivity.class);
+                startActivity(intent);
+            }
+        });
         ivHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

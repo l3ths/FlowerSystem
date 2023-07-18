@@ -31,7 +31,7 @@ public class SearchActivity extends AppCompatActivity {
     RecyclerView rvSearch;
     SearchFlowerAdapter adapter;
     ImageView ivCart;
-    ImageView ivOrders;
+    ImageView ivOrders, ivShopLoca;
     ImageView ivNotification;
     ImageView ivPersonal;
 
@@ -42,6 +42,7 @@ public class SearchActivity extends AppCompatActivity {
         rvSearch = findViewById(R.id.rvSearch);
         ivCart = findViewById(R.id.ivCart);
         ivOrders = findViewById(R.id.ivOrders);
+        ivShopLoca = findViewById(R.id.ivLove);
         ivNotification = findViewById(R.id.ivNotification);
         ivPersonal = findViewById(R.id.ivPersonal);
 
@@ -49,6 +50,13 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SearchActivity.this, OrdersActivity.class);
+                startActivity(intent);
+            }
+        });
+        ivShopLoca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SearchActivity.this, ShopInformationActivity.class);
                 startActivity(intent);
             }
         });
@@ -63,7 +71,7 @@ public class SearchActivity extends AppCompatActivity {
         ivNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SearchActivity.this, ShopInformationActivity.class);
+                Intent intent = new Intent(SearchActivity.this, NotificationActivity.class);
                 startActivity(intent);
             }
         });

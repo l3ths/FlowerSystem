@@ -72,32 +72,32 @@
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:padding="18dp"
-            android:src="@drawable/ic_love" />
+            android:padding="19dp"
+            android:src="@drawable/map_pointer__2_" />
 
         <ImageView
             android:id="@+id/ivOrders"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:padding="16dp"
-            android:src="@drawable/ic_order" />
+            android:padding="20dp"
+            android:src="@drawable/bill" />
 
         <ImageView
             android:id="@+id/ivHome"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:padding="13dp"
-            android:src="@drawable/ic_home_clicked" />
+            android:padding="16dp"
+            android:src="@drawable/flower__1_" />
 
         <ImageView
             android:id="@+id/ivNotification"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:padding="18dp"
-            android:src="@drawable/ic_noti" />
+            android:padding="19dp"
+            android:src="@drawable/ringing" />
 
         <ImageView
             android:id="@+id/ivPersonal"
@@ -105,7 +105,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:padding="18dp"
-            android:src="@drawable/ic_personal"/>
+            android:src="@drawable/ic_personal" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -155,6 +155,7 @@
         android:orientation="horizontal"
         android:weightSum="7"
         android:padding="5dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="parent">
 

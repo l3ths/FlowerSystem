@@ -27,7 +27,7 @@ public class ProfileActivity extends AppCompatActivity {
     ImageView ivEdit;
     CustomerDTO customerDTO;
     ImageView ivOrders;
-    ImageView ivNotification;
+    ImageView ivNotification, ivShopLoca;
     ImageView ivHome;
     Button btnLogout;
 
@@ -41,11 +41,19 @@ public class ProfileActivity extends AppCompatActivity {
         ivBack = findViewById(R.id.ivBack);
         ivEdit = findViewById(R.id.ivEdit);
         tvAddress = findViewById(R.id.tvAddress);
+        ivShopLoca = findViewById(R.id.ivLove);
         ivNotification = findViewById(R.id.ivNotification);
         ivOrders = findViewById(R.id.ivOrders);
         ivHome = findViewById(R.id.ivHome);
         btnLogout = findViewById(R.id.btnLogout);
         getData();
+        ivShopLoca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, ShopInformationActivity.class);
+                startActivity(intent);
+            }
+        });
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

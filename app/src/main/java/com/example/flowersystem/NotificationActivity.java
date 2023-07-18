@@ -10,7 +10,7 @@ import android.widget.ImageView;
 public class NotificationActivity extends AppCompatActivity {
     ImageView ivBack;
     ImageView ivOrders;
-    ImageView ivHome;
+    ImageView ivHome, ivShopLoca;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +32,14 @@ public class NotificationActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        ivShopLoca = findViewById(R.id.ivLove);
+        ivShopLoca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NotificationActivity.this, ShopInformationActivity.class);
+                startActivity(intent);
+            }
+        });
         ivHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

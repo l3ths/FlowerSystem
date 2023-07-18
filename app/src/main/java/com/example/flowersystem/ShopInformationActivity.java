@@ -26,6 +26,7 @@ public class ShopInformationActivity extends AppCompatActivity {
     private TextView tvShopName;
     private TextView tvShopPhone;
     private TextView tvShopAddress;
+    ImageView ivBack;
     private RelativeLayout relativeLayoutLoading;
 
     @Override
@@ -37,6 +38,14 @@ public class ShopInformationActivity extends AppCompatActivity {
         tvShopPhone = findViewById(R.id.tvShopPhone);
         tvShopAddress = findViewById(R.id.tvShopAddress);
         relativeLayoutLoading = findViewById(R.id.loadingPanel);
+        ivBack = findViewById(R.id.ivBack);
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
     }
 
     @Override
