@@ -65,8 +65,9 @@ public class EditProfileActivity extends AppCompatActivity {
                     Toast.makeText(EditProfileActivity.this, "Email không hợp lệ!", Toast.LENGTH_SHORT).show();
                 } else {
                     updateProfile();
-                    Intent intent = new Intent(EditProfileActivity.this, ProfileActivity.class);
-                    startActivity(intent);
+                    //Intent intent = new Intent(EditProfileActivity.this, ProfileActivity.class);
+                    //startActivity(intent);
+                    onBackPressed();
                 }
             }
         });
