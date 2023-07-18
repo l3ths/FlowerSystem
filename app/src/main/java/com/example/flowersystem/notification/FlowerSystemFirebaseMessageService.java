@@ -13,6 +13,9 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.example.flowersystem.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -40,6 +43,12 @@ public class FlowerSystemFirebaseMessageService extends FirebaseMessagingService
 
     private void sendRegistrationToServer(String token) {
         // TODO: Implement this method to send token to your app server.
+        FirebaseMessaging.getInstance().subscribeToTopic(NotificationConstants.GENERAL_TOPIC).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Log.d("SUBSCRIBE_TOPIC", "DONE");
+            }
+        });
     }
 
     @Override
@@ -63,7 +72,7 @@ public class FlowerSystemFirebaseMessageService extends FirebaseMessagingService
     }
 
     private void putNotification(RemoteMessage remoteMessage) {
-        if(checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED){
+        if (checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
             Notification notification = new Notification.Builder(this)
                     .setContentTitle(remoteMessage.getNotification().getTitle())
                     .setContentText(remoteMessage.getNotification().getBody())
