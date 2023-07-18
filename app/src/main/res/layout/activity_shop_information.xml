@@ -8,6 +8,7 @@
     android:background="#FFE8D8"
     tools:context=".ShopInformationActivity">
 
+
     <androidx.cardview.widget.CardView
         android:layout_width="200dp"
         android:layout_height="200dp"
@@ -29,16 +30,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
-        android:text="Borcelle Florist"
+        android:text="La vie est belle"
         android:textColor="#6f473e"
-        android:textSize="50sp"
+        android:textSize="60sp"
         android:textStyle="bold">
     </com.example.flowersystem.custom_textview.AlluraTextView>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
@@ -60,7 +61,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
@@ -84,8 +85,7 @@
         class="com.example.flowersystem.ShopMapsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_margin="20dp"
         tools:layout="@layout/fragment_shop_maps" />
     <RelativeLayout
         android:id="@+id/loadingPanel"
