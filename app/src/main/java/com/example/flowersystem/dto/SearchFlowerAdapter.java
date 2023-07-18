@@ -47,7 +47,7 @@ public class SearchFlowerAdapter extends RecyclerView.Adapter<SearchFlowerAdapte
     public void onBindViewHolder(@NonNull SearchFlowerAdapter.ViewHolder holder, int position) {
         FlowerDTO flower = flowerList.get(position);
         holder.tvSearchName.setText(flower.getFlowerName());
-        holder.tvSearchPrice.setText(flower.getUnitPrice()+"");
+        holder.tvSearchPrice.setText(flower.getUnitPrice()+" VND");
         Glide.with(context)
                 .load(flower.getImage())
                 .centerCrop()
