@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFE8D8"
     tools:context=".FlowerDetailActivity">
 
     <ImageView
         android:id="@+id/ivDetailFlowerImage"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="350dp"
         android:layout_marginTop="5dp"
         android:padding="10dp"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,19 +21,19 @@
         tools:srcCompat="@tools:sample/avatars" />
 
 
-    <com.example.flowersystem.custom_textview.LobsterTextView
+    <com.example.flowersystem.custom_textview.CarenyTextView
         android:id="@+id/tvDetailFlowerName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:text="Bó hoa vải thiều"
-        android:textSize="30dp"
+        android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivDetailFlowerImage">
 
-    </com.example.flowersystem.custom_textview.LobsterTextView>
+    </com.example.flowersystem.custom_textview.CarenyTextView>
 
     <TextView
         android:id="@+id/tvDetailFlowerPrice"
@@ -47,9 +49,9 @@
     <TextView
         android:id="@+id/tvDetailFlowerDetails"
         android:layout_width="369dp"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Sản phẩm bao gồm:\n - 2kg Vải tươi. \n - Hoa Baby\n - Lá lạc"
+        android:text="Sản phẩm bao gồm:"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="@+id/tvDetailFlowerName"
         app:layout_constraintTop_toBottomOf="@+id/tvDetailFlowerPrice" />
@@ -113,25 +115,25 @@
         android:paddingBottom="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <ImageView
             android:id="@+id/ivBack"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_back" />
+            app:srcCompat="@drawable/back" />
 
         <ImageView
             android:id="@+id/ivCart"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_margin="10dp"
             android:padding="2dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_cart_clicked" />
+            app:srcCompat="@drawable/shopping_cart" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -151,7 +153,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:weightSum="5"
+        android:weightSum="7"
         android:padding="5dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="parent">
@@ -159,14 +161,15 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:weightSum="3">
+            android:layout_weight="2"
+            android:weightSum="4">
 
             <ImageView
                 android:id="@+id/ivMinus"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:layout_marginLeft="10dp"
                 android:src="@drawable/minus_ic" />
             <TextView
                 android:id="@+id/tvQuantity"
@@ -175,14 +178,15 @@
                 android:textSize="18dp"
                 android:gravity="center"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="2"/>
 
             <ImageView
                 android:id="@+id/ivAdd"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/plus_ic" />
+                android:src="@drawable/plus_ic"
+                android:layout_marginRight="10dp"/>
 
         </LinearLayout>
 
@@ -190,27 +194,29 @@
             android:id="@+id/llAddToCart"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:weightSum="5">
+            android:layout_weight="3"
+            android:weightSum="4">
 
             <TextView
                 android:id="@+id/tvAddToCart"
                 android:layout_width="0dp"
+                android:layout_marginLeft="5dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"
+                android:layout_weight="3"
                 android:text="Thêm vào giỏ"
                 android:gravity="center"
                 android:textAlignment="center"
-                android:textColor="#FF9E00"
-                android:textSize="15dp"
+                android:textColor="#4A2E22"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imageView18"
+                android:layout_marginRight="10dp"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_add_to_cart" />
+                app:srcCompat="@drawable/shopping_cart" />
         </LinearLayout>
 
         <Button

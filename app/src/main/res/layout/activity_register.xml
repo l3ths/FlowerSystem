@@ -19,7 +19,7 @@
 
     <EditText
         android:id="@+id/etPassword"
-        android:layout_width="320dp"
+        android:layout_width="330dp"
         android:layout_height="45dp"
 
         android:layout_marginTop="2dp"
@@ -45,7 +45,7 @@
 
     <EditText
         android:id="@+id/etPhone"
-        android:layout_width="320dp"
+        android:layout_width="330dp"
         android:layout_height="45dp"
         android:layout_marginTop="2dp"
         android:background="@drawable/botron_edittext"
@@ -70,7 +70,7 @@
 
     <EditText
         android:id="@+id/etName"
-        android:layout_width="320dp"
+        android:layout_width="330dp"
         android:layout_height="45dp"
         android:layout_marginTop="2dp"
         android:background="@drawable/botron_edittext"
@@ -83,7 +83,7 @@
 
     <EditText
         android:id="@+id/etEmail"
-        android:layout_width="320dp"
+        android:layout_width="330dp"
         android:layout_height="45dp"
         android:layout_marginTop="2dp"
         android:background="@drawable/botron_edittext"
@@ -112,7 +112,7 @@
 
     <EditText
         android:id="@+id/etConfirmPassword"
-        android:layout_width="320dp"
+        android:layout_width="330dp"
         android:layout_height="45dp"
         android:layout_marginTop="2dp"
         android:background="@drawable/botron_edittext"
@@ -129,19 +129,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="Xác nhận mật khẩu"
-        android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textColor="#4A2E22"        android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/etPassword"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
-    <TextView
+    <com.example.flowersystem.custom_textview.QuicksandRegularTextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Đăng kí tài khoản"
-        android:textSize="30dp"
+        android:text="REGISTER"
+        android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -150,12 +149,12 @@
 
     <ImageView
         android:id="@+id/ivBack"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
         android:layout_margin="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back" />
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:srcCompat="@drawable/back" />
 
     <TextView
         android:id="@+id/textView5"
@@ -163,7 +162,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Họ và tên"
-        android:textColor="@color/black"
+        android:textColor="#4A2E22"
         android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/etName"
@@ -175,8 +174,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="Email"
-        android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textColor="#4A2E22"        android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/etName"
         app:layout_constraintTop_toBottomOf="@+id/etName" />
@@ -184,7 +182,7 @@
     <EditText
 
         android:id="@+id/etAddress"
-        android:layout_width="320dp"
+        android:layout_width="330dp"
         android:layout_height="45dp"
         android:layout_marginTop="2dp"
         android:background="@drawable/botron_edittext"
@@ -201,8 +199,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="Địa chỉ"
-        android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textColor="#4A2E22"        android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/etConfirmPassword"
         app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword" />

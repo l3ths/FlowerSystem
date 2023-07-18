@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Edit Information"
-        android:textColor="#CF7B00"
+        android:textColor="#4A2E22"
         android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -22,13 +22,13 @@
 
     <ImageView
         android:id="@+id/ivBack"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvProfile"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvProfile"
-        app:srcCompat="@drawable/ic_back" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -110,21 +110,22 @@
             app:cardCornerRadius="1000dp">
 
             <ImageView
+                android:padding="20dp"
                 android:id="@+id/ivAvatar"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 app:cornerRadius="50dp"
-                app:srcCompat="@drawable/avatar" />
+                android:src="@drawable/man"/>
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="10dp"
-            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="15dp"
             android:weightSum="10">
 
             <TextView
@@ -145,7 +146,7 @@
             <EditText
                 android:id="@+id/etName"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_weight="7"
                 android:background="@drawable/shadowrow_custom"
                 android:paddingLeft="10dp" />
@@ -155,8 +156,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="10dp"
-            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="15dp"
             android:weightSum="10">
 
             <TextView
@@ -176,7 +177,7 @@
             <EditText
                 android:id="@+id/etAddress"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_weight="7"
                 android:background="@drawable/shadowrow_custom"
                 android:paddingLeft="10dp" />
@@ -187,8 +188,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="10"
-            android:paddingBottom="10dp"
-            android:paddingRight="10dp">
+            android:paddingBottom="5dp"
+            android:paddingRight="15dp">
 
             <TextView
                 android:id="@+id/lblPhone"
@@ -207,7 +208,7 @@
             <EditText
                 android:id="@+id/etPhone"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_weight="7"
                 android:background="@drawable/shadowrow_custom"
                 android:paddingLeft="10dp" />
@@ -218,7 +219,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingBottom="10dp"
-            android:paddingRight="10dp"
+            android:paddingRight="15dp"
             android:weightSum="10">
 
             <TextView
@@ -237,7 +238,7 @@
             <EditText
                 android:id="@+id/etEmail"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_weight="7"
                 android:background="@drawable/shadowrow_custom"
                 android:paddingLeft="10dp" />
@@ -247,7 +248,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal"
             android:weightSum="10">
 

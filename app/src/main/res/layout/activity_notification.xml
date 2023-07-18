@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFE8D8"
+
     tools:context=".NotificationActivity">
 
     <LinearLayout
@@ -58,26 +60,26 @@
             android:src="@drawable/ic_personal" />
     </LinearLayout>
 
-    <TextView
+    <com.example.flowersystem.custom_textview.CarenyTextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Thông báo"
-        android:textSize="30dp"
-        android:textColor="#FF9E00"
+        android:text="Notification"
+        android:textSize="35dp"
+        android:textColor="#4A2E22"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
-        android:id="@+id/ivBack2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
+        android:id="@+id/ivBack"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back" />
+        app:srcCompat="@drawable/back" />
 </androidx.constraintlayout.widget.ConstraintLayout>

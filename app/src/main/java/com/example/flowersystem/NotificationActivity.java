@@ -15,7 +15,7 @@ public class NotificationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
-        ivBack = findViewById(R.id.ivBack2);
+        ivBack = findViewById(R.id.ivBack);
         ivOrders = findViewById(R.id.ivOrders);
         ivHome = findViewById(R.id.ivHome);
         ivBack.setOnClickListener(new View.OnClickListener() {

@@ -14,7 +14,7 @@
         android:layout_marginTop="20dp"
         android:text="Order"
         android:textSize="35dp"
-        android:textColor="#CF7B00"
+        android:textColor="#4A2E22"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -22,12 +22,13 @@
         app:layout_constraintTop_toTopOf="parent" />
     <ImageView
         android:id="@+id/ivBack"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back" />
+        app:srcCompat="@drawable/back" />
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -99,12 +100,12 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
+            android:textColor="#4A2E22"
             android:background="@drawable/button_choose_shadow"
             android:gravity="center"
             android:padding="10dp"
             android:text="Đang giao"
-            android:textSize="15dp"
-            android:textStyle="bold" />
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/tvShipped"
@@ -115,8 +116,8 @@
             android:padding="10dp"
             android:background="@color/white"
             android:text="Đã giao"
-            android:textSize="15dp"
-            android:textStyle="bold" />
+            android:textColor="#4A2E22"
+            android:textSize="20dp"/>
         <TextView
             android:id="@+id/tvCanceled"
             android:layout_width="0dp"
@@ -126,14 +127,14 @@
             android:background="@color/white"
             android:padding="10dp"
             android:text="Đã huỷ"
-            android:textSize="15dp"
-            android:textStyle="bold" />
+            android:textColor="#4A2E22"
+            android:textSize="20dp"/>
 
     </LinearLayout>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
         android:id="@+id/rvOrder"
         android:layout_width="match_parent"
         android:layout_height="550dp"

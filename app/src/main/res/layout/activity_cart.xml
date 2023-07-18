@@ -4,16 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFE8D8"
     tools:context=".CartActivity">
 
     <ImageView
         android:id="@+id/ivBack"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back" />
+        app:srcCompat="@drawable/back" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -67,15 +69,15 @@
             android:src="@drawable/ic_personal" />
     </LinearLayout>
 
-    <TextView
+    <com.example.flowersystem.custom_textview.CarenyTextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Giỏ hàng"
-        android:textColor="#FF9E00"
+        android:text="Cart"
+        android:textColor="#4A2E22"
+        android:textSize="35dp"
         android:textStyle="bold"
-        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,8 +88,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tổng : "
-        android:layout_marginStart="10dp"
-        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:textSize="22dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/btnOrder"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,8 +100,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        android:textColor="#FF9E00"
-        android:textSize="20dp"
+        android:textColor="#4A2E22"
+        android:textSize="22dp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/textView20"
         app:layout_constraintStart_toEndOf="@+id/textView20"
@@ -111,8 +113,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" VND"
-        android:textColor="#FF9E00"
-        android:textSize="20dp"
+        android:textColor="#4A2E22"
+        android:textSize="22dp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/tvTotalCart"
         app:layout_constraintStart_toEndOf="@+id/tvTotalCart"
@@ -125,6 +127,9 @@
         android:background="@drawable/button_custom"
         android:textColor="@color/white"
         android:text="ĐẶT HÀNG"
+        android:textSize="18dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:layout_margin="10dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -135,6 +140,8 @@
         android:layout_height="510dp"
         android:layout_marginTop="10dp"
         android:clickable="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />

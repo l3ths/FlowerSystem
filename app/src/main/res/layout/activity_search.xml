@@ -12,14 +12,14 @@
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/homepage"/>
     <SearchView
         android:id="@+id/searchView"
-        android:layout_width="334dp"
+        android:layout_width="325dp"
         android:layout_height="50dp"
         android:layout_margin="10dp"
         android:background="@drawable/searchbox_custom"
@@ -29,19 +29,21 @@
 
     <ImageView
         android:id="@+id/ivCart"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:padding="2dp"
-        android:src="@drawable/ic_cart_clicked"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/shopping_cart"
         app:layout_constraintBottom_toBottomOf="@+id/searchView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/searchView" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:weightSum="5"
-        android:paddingBottom="10dp"
         android:background="#4DFFAB40"
+        android:paddingBottom="10dp"
+        android:weightSum="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -101,7 +103,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSearch"
         android:layout_width="383dp"
-        android:layout_height="610dp"
+        android:layout_height="498dp"
         android:layout_marginStart="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView9" />
