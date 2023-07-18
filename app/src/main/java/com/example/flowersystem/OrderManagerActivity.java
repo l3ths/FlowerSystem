@@ -41,6 +41,8 @@ public class OrderManagerActivity extends AppCompatActivity {
     ImageView ivBack;
     String STATUS = Constants.OrderStatusNumber.CREATED;
     ImageView ivNotification;
+    ImageView ivLogout;
+    ImageView ivShopLocate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,26 @@ public class OrderManagerActivity extends AppCompatActivity {
         tvCanceled = findViewById(R.id.tvCanceled);
         ivBack = findViewById(R.id.ivBack);
         ivNotification = findViewById(R.id.ivNotification);
+        ivLogout = findViewById(R.id.ivPersonal);
+        ivShopLocate = findViewById(R.id.ivLove);
+
+        ivShopLocate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OrderManagerActivity.this, ShopInformationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OrderManagerActivity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+            }
+        });
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
