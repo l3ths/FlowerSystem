@@ -2,11 +2,13 @@ package com.example.flowersystem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.flowersystem.api.NotificationApi;
@@ -24,6 +26,8 @@ public class SendNotificationActivity extends AppCompatActivity {
     EditText etNotiTitle;
     EditText etNotiBody;
     Button btnSendNoti;
+    ImageView ivLogout;
+    ImageView ivShopLocate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,26 @@ public class SendNotificationActivity extends AppCompatActivity {
         etNotiTitle = findViewById(R.id.etNotiTitle);
         etNotiBody = findViewById(R.id.etNotiBody);
         btnSendNoti = findViewById(R.id.btnSendNoti);
+        ivLogout = findViewById(R.id.ivPersonal);
+        ivShopLocate = findViewById(R.id.ivLove);
+
+        ivShopLocate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SendNotificationActivity.this, ShopInformationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SendNotificationActivity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+            }
+        });
         btnSendNoti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
