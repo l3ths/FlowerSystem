@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Order"
-        android:textSize="40dp"
+        android:textSize="35dp"
         android:textColor="#CF7B00"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

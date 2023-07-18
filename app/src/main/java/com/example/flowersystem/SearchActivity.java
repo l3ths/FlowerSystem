@@ -63,7 +63,7 @@ public class SearchActivity extends AppCompatActivity {
         ivNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SearchActivity.this, NotificationActivity.class);
+                Intent intent = new Intent(SearchActivity.this, ShopInformationActivity.class);
                 startActivity(intent);
             }
         });
