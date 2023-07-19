@@ -144,13 +144,15 @@ public class OrderManagerActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<List<OrderDTO>> call, Response<List<OrderDTO>> response) {
                     List<OrderDTO> list = response.body();
-                    ArrayList<OrderFlower> orderFlowerList = new ArrayList<>();
-                    for (int i = 0; i < list.size(); i++) {
-                        orderFlowerList.add(new OrderFlower(list.get(i)));
-                    }
-                    adapter.setTasks(orderFlowerList);
-                    if (adapter.getItemCount() == 0) {
-                        Toast.makeText(OrderManagerActivity.this, "Đơn hàng trống!", Toast.LENGTH_SHORT).show();
+                    if (list != null) {
+                        ArrayList<OrderFlower> orderFlowerList = new ArrayList<>();
+                        for (int i = 0; i < list.size(); i++) {
+                            orderFlowerList.add(new OrderFlower(list.get(i)));
+                        }
+                        adapter.setTasks(orderFlowerList);
+                        if (adapter.getItemCount() == 0) {
+                            Toast.makeText(OrderManagerActivity.this, "Đơn hàng trống!", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
 
