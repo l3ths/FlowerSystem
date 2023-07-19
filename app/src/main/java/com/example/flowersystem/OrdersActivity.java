@@ -47,6 +47,7 @@ public class OrdersActivity extends AppCompatActivity {
     String STATUS = Constants.OrderStatusNumber.CREATED;
     ImageView ivHome;
     ImageView ivNotification;
+    ImageView ivPersonal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +58,7 @@ public class OrdersActivity extends AppCompatActivity {
         tvCanceled = findViewById(R.id.tvCanceled);
         ivBack = findViewById(R.id.ivBack);
         ivHome = findViewById(R.id.ivHome);
+        ivPersonal = findViewById(R.id.ivPersonal);
 
         ivNotification = findViewById(R.id.ivNotification);
         ivBack.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +87,14 @@ public class OrdersActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(OrdersActivity.this, NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivPersonal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OrdersActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });

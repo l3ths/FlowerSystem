@@ -49,6 +49,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     ImageView ivOrders;
     ImageView ivHome;
     ImageView ivNotification;
+    ImageView ivEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         ivOrders = findViewById(R.id.ivOrders);
         ivHome = findViewById(R.id.ivHome);
         ivNotification = findViewById(R.id.ivNotification);
+        ivEdit = findViewById(R.id.imageView14);
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +96,14 @@ public class ConfirmOrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ConfirmOrderActivity.this, NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConfirmOrderActivity.this, EditProfileActivity.class);
                 startActivity(intent);
             }
         });

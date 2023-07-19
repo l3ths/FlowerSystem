@@ -34,6 +34,7 @@ public class EditProfileActivity extends AppCompatActivity {
     ImageView ivOrders;
     ImageView ivNotification;
     ImageView ivHome;
+    ImageView ivShopLoca;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class EditProfileActivity extends AppCompatActivity {
         ivNotification = findViewById(R.id.ivNotification);
         ivOrders = findViewById(R.id.ivOrders);
         ivHome = findViewById(R.id.ivHome);
+        ivShopLoca = findViewById(R.id.ivLove);
 
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +91,14 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(EditProfileActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivShopLoca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EditProfileActivity.this, ShopInformationActivity.class);
                 startActivity(intent);
             }
         });

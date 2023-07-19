@@ -42,6 +42,8 @@ public class CartActivity extends AppCompatActivity {
     ImageView ivOrders;
     ImageView ivHome;
     ImageView ivNotification;
+    ImageView ivShopLoca;
+    ImageView ivPersonal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,8 @@ public class CartActivity extends AppCompatActivity {
         ivOrders = findViewById(R.id.ivOrders);
         ivHome = findViewById(R.id.ivHome);
         ivNotification = findViewById(R.id.ivNotification);
+        ivShopLoca = findViewById(R.id.ivLove);
+        ivPersonal = findViewById(R.id.ivPersonal);
         rvCart.setLayoutManager(new LinearLayoutManager(CartActivity.this));
         adapter = new CartAdapter(CartActivity.this);
         rvCart.setAdapter(adapter);
@@ -97,6 +101,22 @@ public class CartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CartActivity.this, NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivShopLoca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CartActivity.this, ShopInformationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivPersonal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CartActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });

@@ -10,7 +10,9 @@ import android.widget.ImageView;
 public class NotificationActivity extends AppCompatActivity {
     ImageView ivBack;
     ImageView ivOrders;
-    ImageView ivHome, ivShopLoca;
+    ImageView ivHome;
+    ImageView ivShopLoca;
+    ImageView ivPersonal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +20,8 @@ public class NotificationActivity extends AppCompatActivity {
         ivBack = findViewById(R.id.ivBack);
         ivOrders = findViewById(R.id.ivOrders);
         ivHome = findViewById(R.id.ivHome);
+        ivShopLoca = findViewById(R.id.ivLove);
+        ivPersonal = findViewById(R.id.ivPersonal);
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,7 +36,6 @@ public class NotificationActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        ivShopLoca = findViewById(R.id.ivLove);
         ivShopLoca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +47,14 @@ public class NotificationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(NotificationActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ivPersonal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NotificationActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });
