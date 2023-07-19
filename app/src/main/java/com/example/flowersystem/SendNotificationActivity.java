@@ -28,7 +28,7 @@ public class SendNotificationActivity extends AppCompatActivity {
     Button btnSendNoti;
     ImageView ivLogout;
     ImageView ivShopLocate;
-
+    ImageView ivOrders;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +38,14 @@ public class SendNotificationActivity extends AppCompatActivity {
         btnSendNoti = findViewById(R.id.btnSendNoti);
         ivLogout = findViewById(R.id.ivPersonal);
         ivShopLocate = findViewById(R.id.ivLove);
+        ivOrders = findViewById(R.id.ivOrders);
+        ivOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SendNotificationActivity.this, OrderManagerActivity.class);
+                startActivity(intent);
+            }
+        });
 
         ivShopLocate.setOnClickListener(new View.OnClickListener() {
             @Override
