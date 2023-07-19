@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -47,7 +48,8 @@ public class OrderManagerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_manager);rvOrder = findViewById(R.id.rvOrder);
+        setContentView(R.layout.activity_order_manager);
+        rvOrder = findViewById(R.id.rvOrder);
         tvShipping = findViewById(R.id.tvShipping);
         tvShipped = findViewById(R.id.tvShipped);
         tvCanceled = findViewById(R.id.tvCanceled);
@@ -127,6 +129,7 @@ public class OrderManagerActivity extends AppCompatActivity {
         rvOrder.setAdapter(adapter);
     }
 
+    @Override
     protected void onResume() {
         super.onResume();
         retrieveTask();
@@ -143,7 +146,7 @@ public class OrderManagerActivity extends AppCompatActivity {
                     List<OrderDTO> list = response.body();
                     ArrayList<OrderFlower> orderFlowerList = new ArrayList<>();
                     for (int i = 0; i < list.size(); i++) {
-                            orderFlowerList.add(new OrderFlower(list.get(i)));
+                        orderFlowerList.add(new OrderFlower(list.get(i)));
                     }
                     adapter.setTasks(orderFlowerList);
                     if (adapter.getItemCount() == 0) {
@@ -153,7 +156,7 @@ public class OrderManagerActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<List<OrderDTO>> call, Throwable t) {
-
+                    Log.d("Error", t.getMessage());
                 }
             });
         } catch (Exception e) {

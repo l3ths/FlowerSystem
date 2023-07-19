@@ -144,7 +144,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<CustomerDTO> call, Throwable t) {
-
+                        Log.d("Error", t.getMessage());
                     }
                 });
             } catch (Exception e) {

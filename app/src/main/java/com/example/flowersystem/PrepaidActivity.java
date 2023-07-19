@@ -76,12 +76,12 @@ public class PrepaidActivity extends AppCompatActivity {
 
                 //action == SuccessBackAction
                 //thanh toán thành công trên webview
-                if (action == "SuccessBackAction") {
+                if (action.equals("SuccessBackAction")) {
                     Intent cartIntent = new Intent(PrepaidActivity.this, CartActivity.class);
                     cartIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(cartIntent);
                     finish();
-                } else if (action == "AppBackAction") {
+                } else if (action.equals("AppBackAction")) {
                     Intent cartIntent = new Intent(PrepaidActivity.this, CartActivity.class);
                     cartIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(cartIntent);
@@ -201,7 +201,7 @@ public class PrepaidActivity extends AppCompatActivity {
         }
         String queryUrl = query.toString();
         //Checksum hash
-        String secret = Config.vnp_HashSecret;
+//        String secret = Config.vnp_HashSecret;
         String vnp_SecureHash = Config.hmacSHA512(Config.vnp_HashSecret, hashData.toString());
 
 

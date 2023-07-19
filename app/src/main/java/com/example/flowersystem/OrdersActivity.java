@@ -11,6 +11,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -155,7 +156,7 @@ public class OrdersActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<List<OrderDTO>> call, Throwable t) {
-
+                    Log.d("Error", t.getMessage());
                 }
             });
         } catch (Exception e) {
@@ -181,6 +182,7 @@ public class OrdersActivity extends AppCompatActivity {
 
                             @Override
                             public void onFailure(Call<MessageDTO> call, Throwable t) {
+                                Log.d("Error", t.getMessage());
                                 adapter.notifyDataSetChanged();
                                 onResume();
                                 Toast.makeText(OrdersActivity.this, "Huỷ thành công!", Toast.LENGTH_SHORT).show();

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -107,7 +108,7 @@ public class SearchActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<List<FlowerDTO>> call, Throwable t) {
-
+                    Log.d("Error", t.getMessage());
                 }
             });
 
@@ -130,6 +131,7 @@ public class SearchActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<FlowerDTO> call, Throwable t) {
+                    Log.d("Error", t.getMessage());
 
                 }
             });
